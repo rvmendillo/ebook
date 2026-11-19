@@ -197,3 +197,12 @@ export async function signOut(): Promise<Session> {
   await supabase.auth.signOut();
   return ensureSession();
 }
+
+/** Permanently deletes the reader's account and server data, then starts a fresh guest session. */
+export async function deleteAccount(): Promise<Session> {
+  if (!supabase) return NO_SESSION;
+  const { error } = await supabase.functions.invoke('delete-account', { body: {} });
+  if (error) throw error;
+  await supabase.auth.signOut({ scope: 'local' }).catch(() => undefined);
+  return ensureSession();
+}

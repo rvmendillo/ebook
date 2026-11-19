@@ -47,6 +47,7 @@ Refunds reported by the store add a negative `refund` row; admins can gift credi
 * Paywall shows price, period, auto-renewal terms, *Restore purchases*, and links to Terms and Privacy ✓
 * Credits are consumable, never expire and are only spent on digital content ✓
 * Free content is reachable without paying ✓
+* In-app account deletion (*Account → Delete account*) and a web deletion page ✓
 * ATT prompt has a usage description (`app.config.ts`) ✓
 * Replace the placeholder Terms/Privacy links in **Admin → Monetization** before submitting.
 * Declare advertising data use (AdMob) in App Store privacy details and the Play Data safety form.

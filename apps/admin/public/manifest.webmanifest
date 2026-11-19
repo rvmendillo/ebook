@@ -1,0 +1,14 @@
+{
+  "name": "Polymath Admin",
+  "short_name": "Polymath Admin",
+  "description": "Publish articles, tips, tutorials and ebooks to the Polymath app.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1E1B4B",
+  "theme_color": "#1E1B4B",
+  "icons": [
+    { "src": "admin-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "admin-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -37,6 +37,8 @@ The schema's row-level security means anyone can read the catalogue and free tex
 
 * **Hosted on GitHub Pages:** *Settings → Pages → Source: GitHub Actions*. The *Admin web app* workflow deploys on every push to the default branch. If you set the `SUPABASE_*` variables it's pre-connected; otherwise open **Settings** in the admin and paste the URL + publishable key (saved in your browser).
 * **Locally:** `cd apps/admin && npm install && npm run dev`.
+* **On your phone, as a web app:** open the Pages URL in Safari/Chrome → *Add to Home Screen*.
+* **As an iPhone/iPad app:** the *Admin iOS app (IPA)* workflow packages the same admin with Capacitor into `PolymathAdmin-…-unsigned.ipa` (sideload it like the reader app). For a signed build add an **App Store provisioning profile for the admin bundle id** (`com.rvmendillo.polymath.admin`, or set `ADMIN_BUNDLE_ID`) as `IOS_ADMIN_PROVISIONING_PROFILE_BASE64`; it re-uses the distribution certificate and can go to **TestFlight internal testing** (no App Review) for you and your team. To open it in Xcode: `cd apps/admin && npm run ios:sync && npm run ios:open`.
 * Sign in with the admin user from step 1.5. Load the starter library from *Settings* if you skipped the seed.
 
 ## 3. Payments: store products + RevenueCat
@@ -86,6 +88,8 @@ Until these are set — and in every debug build — the app uses Google's offic
 
 ## 5. Android signing and Google Play
 
+> Publishing for the first time as an individual? **[GOOGLE_PLAY.md](GOOGLE_PLAY.md)** walks through the account, documents, the 12-tester closed test, the policy forms and automated uploads.
+
 Without a key the release build is signed with the debug key (installable, but Play won't accept it). Create an **upload key** once:
 
 ```bash
@@ -93,7 +97,7 @@ keytool -genkeypair -v -keystore polymath-upload.jks -alias upload -keyalg RSA -
 base64 -w0 polymath-upload.jks   # macOS: base64 -i polymath-upload.jks
 ```
 
-Secrets: `ANDROID_KEYSTORE_BASE64` (the base64 output), `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` (`upload`), `ANDROID_KEY_PASSWORD` (if different). Keep the `.jks` file safe — you need the same key for every update. Upload the `.aab` artifact in Play Console (enable *Play App Signing*).
+Secrets: `ANDROID_KEYSTORE_BASE64` (the base64 output), `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` (`upload`), `ANDROID_KEY_PASSWORD` (if different). Keep the `.jks` file safe — you need the same key for every update. Upload the first `.aab` artifact in Play Console yourself (enable *Play App Signing*); after that add `PLAY_SERVICE_ACCOUNT_JSON` and the workflow uploads to the track you choose ([GOOGLE_PLAY.md §4](GOOGLE_PLAY.md#4-automating-uploads-from-github)).
 
 ## 6. iOS signing, TestFlight and the App Store
 
@@ -112,7 +116,7 @@ The iOS workflow **always** produces an IPA:
 
 Then run **Actions → iOS build (IPA) → Run workflow** with *Upload to TestFlight* ticked, or push a `v*` tag. Build numbers come from the workflow run number, so every upload is unique.
 
-Before submitting for review: fill in the privacy nutrition label (AdMob collects device identifiers for advertising; RevenueCat processes purchase history), add a privacy policy URL, and set real Terms/Privacy links in **Admin → Monetization** (Apple requires them on the paywall, which already shows them).
+Before submitting for review: fill in the privacy nutrition label (AdMob collects device identifiers for advertising; RevenueCat processes purchase history), add a privacy policy URL, and set real Terms/Privacy links in **Admin → Monetization** (Apple requires them on the paywall, which already shows them). Account deletion — required by both stores because readers can create an account — is built in (*Account → Delete account*, backed by the `delete-account` edge function); the web version for Google Play is `delete-account.html` on your Pages site (edit its email address).
 
 ## 7. Versions and releases
 
@@ -130,6 +134,9 @@ Before submitting for review: fill in the privacy nutrition label (AdMob collect
 | `APP_VERSION` | `1.0.0` | Marketing version |
 | `SUPABASE_URL` | `https://abcd.supabase.co` | Apps + admin |
 | `SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_…` | Apps + admin |
+| `ADMIN_BUNDLE_ID` | `com.rvmendillo.polymath.admin` | Admin iOS app bundle id |
+| `PLAY_TRACK` | `internal` | Google Play track for `v*` tag uploads (`internal`, `alpha`, `beta`, `production`) |
+| `PLAY_RELEASE_STATUS` | `completed` | `draft` until the app has been rolled out once |
 
 **Secrets:**
 
@@ -143,6 +150,8 @@ Before submitting for review: fill in the privacy nutrition label (AdMob collect
 | `IOS_TEAM_ID`, `IOS_DIST_CERT_P12_BASE64`, `IOS_DIST_CERT_PASSWORD`, `IOS_PROVISIONING_PROFILE_BASE64` | Signed IPA |
 | `APP_STORE_CONNECT_KEY_ID`, `APP_STORE_CONNECT_ISSUER_ID`, `APP_STORE_CONNECT_KEY_P8` | TestFlight upload |
 | `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` | Play-ready signing |
+| `PLAY_SERVICE_ACCOUNT_JSON` | Automatic uploads to Google Play |
+| `IOS_ADMIN_PROVISIONING_PROFILE_BASE64` | Signed admin iOS app (plus the `IOS_*` certificate secrets) |
 
 For local builds put the same values in `apps/mobile/.env` (copy [`.env.example`](../apps/mobile/.env.example)).
 

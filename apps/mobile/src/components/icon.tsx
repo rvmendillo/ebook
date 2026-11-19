@@ -24,6 +24,7 @@ const ICONS = {
   doc: { ios: 'doc.text.fill', android: 'description' },
   info: { ios: 'info.circle.fill', android: 'info' },
   logout: { ios: 'rectangle.portrait.and.arrow.right', android: 'logout' },
+  trash: { ios: 'trash', android: 'delete' },
   clock: { ios: 'clock', android: 'schedule' },
   sun: { ios: 'sun.max.fill', android: 'light_mode' },
   moon: { ios: 'moon.fill', android: 'dark_mode' },

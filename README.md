@@ -28,10 +28,13 @@ Every push builds the apps on GitHub:
 | Workflow | Output | Where |
 |---|---|---|
 | **iOS build (IPA)** | `Polymath-<version>-<build>-unsigned.ipa` — or a signed App Store IPA (+ TestFlight upload) when signing secrets are set | Actions → *iOS build (IPA)* → run → **Artifacts** |
-| **Android build (APK + AAB)** | Installable `.apk` and Play Store `.aab` | Actions → *Android build* → run → **Artifacts** |
-| **Admin web app** | The admin studio, deployed to GitHub Pages from the default branch | `https://<you>.github.io/<repo>/` |
+| **Android build (APK + AAB)** | Installable `.apk` and Play Store `.aab` — optionally uploaded straight to a Google Play track | Actions → *Android build* → run → **Artifacts** |
+| **Admin iOS app (IPA)** | `PolymathAdmin-<version>-<build>-unsigned.ipa` — the admin studio as its own iPhone/iPad app | Actions → *Admin iOS app (IPA)* → run → **Artifacts** |
+| **Admin web app** | The admin studio, deployed to GitHub Pages from the default branch (installable as a web app too) | `https://<you>.github.io/<repo>/` |
 
-Push a tag like `v1.0.0` and both mobile workflows attach their files to a **GitHub Release**.
+Push a tag like `v1.0.0` and the app workflows attach their files to a **GitHub Release**.
+
+**Publishing on Google Play as an individual?** Follow **[docs/GOOGLE_PLAY.md](docs/GOOGLE_PLAY.md)** — account type, documents, the 12-tester closed test, policy forms, and automated uploads. Store graphics and listing text are ready in [`store/google-play/`](store/google-play).
 
 **Installing the unsigned IPA:** sideload it with [AltStore](https://altstore.io) or [Sideloadly](https://sideloadly.io) using your Apple ID, or add the signing secrets to get an App Store build. Details in [docs/SETUP.md › iOS](docs/SETUP.md#6-ios-signing-testflight-and-the-app-store).
 
@@ -61,19 +64,20 @@ More in **[docs/MONETIZATION.md](docs/MONETIZATION.md)**.
 
 Write in Markdown with a toolbar for **math** (`$x^2$`), **code**, **sheet music**, tips/warnings, tables, images and video embeds. A live phone preview shows exactly what readers see — including the free preview before the ad or paywall. Manage categories (Mathematics, Music, Programming, Science, Languages, Productivity …), monetization settings, credit packs, readers and sales.
 
-It runs in **demo mode** (saved in your browser) until you connect Supabase from *Settings*. Guide: **[docs/CONTENT.md](docs/CONTENT.md)**.
+It runs in **demo mode** (saved in your browser) until you connect Supabase from *Settings*. Use it in the browser (GitHub Pages), add it to your home screen, or install the **Polymath Admin** iPhone/iPad app built by the *Admin iOS app* workflow (same code, packaged with Capacitor). Guide: **[docs/CONTENT.md](docs/CONTENT.md)**.
 
 ## Repository layout
 
 ```
 apps/mobile/        Expo app (iOS + Android) — screens in src/app, logic in src/lib + src/state
-apps/admin/         Admin studio (React + Vite) — deployable to GitHub Pages
+apps/admin/         Admin studio (React + Vite) — GitHub Pages, and an iOS app via Capacitor (apps/admin/ios)
 shared/             Code used by both apps: data types, access rules, the reader template
 supabase/           Database migrations, seed data, edge functions, database tests
 content/            Starter library in Markdown (rendered by `npm run content` in apps/admin)
 branding/           Logo + icon sources (SVG), brand guide, PNG exports, render script
-docs/               Setup, monetization and content guides; screenshots
-.github/workflows/  CI · iOS IPA · Android APK/AAB · admin Pages · Supabase deploy
+docs/               Setup, Google Play, monetization and content guides; screenshots
+store/              Google Play listing text, icon, feature graphic, screenshots, release notes
+.github/workflows/  CI · iOS IPA · Android APK/AAB (+ Play upload) · admin iOS IPA · admin Pages · Supabase deploy
 ```
 
 ## Run it locally

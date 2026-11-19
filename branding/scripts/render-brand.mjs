@@ -8,7 +8,7 @@
  * Requires Playwright with a Chromium build (`npm i -g playwright && npx playwright install chromium`).
  */
 import { createRequire } from 'node:module';
-import { mkdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -33,6 +33,25 @@ const inner = (svg) => svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s
 const MARK = inner(src('mark.svg'));
 const MONO = inner(src('mark-mono.svg'));
 const BG = inner(src('background.svg'));
+const ADMIN_BG = inner(src('admin-background.svg'));
+const ADMIN_BADGE = inner(src('admin-badge.svg'));
+
+/** Admin app icon: the mark on a darker background with an amber pencil badge. */
+function adminArtboard(size = 1024) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="${size}" height="${size}">
+    ${ADMIN_BG}
+    <g transform="translate(470 470) scale(0.74) translate(-512 -512)">${MARK}</g>
+    ${ADMIN_BADGE}
+  </svg>`;
+}
+
+/** Square launch image (2732²) for the admin app: small mark centred on the night background. */
+function adminSplash(size = 2732) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="${size}" height="${size}">
+    <rect width="1024" height="1024" fill="#1E1B4B"/>
+    <g transform="translate(512 512) scale(0.22) translate(-512 -512)">${MARK}</g>
+  </svg>`;
+}
 
 /** Compose a square 1024-unit artboard rendered at `size` px. */
 function artboard({ size = 1024, background = false, mark = MARK, scale = 1, dy = 0, radius = 0 }) {
@@ -105,6 +124,11 @@ const jobs = [
     svg: artboard({ size: 180, background: true, scale: 0.84 }),
     opaque: true,
   },
+  // Admin studio (iOS app built with Capacitor + PWA icons).
+  { file: 'admin-icon.png', size: 1024, svg: adminArtboard(1024), opaque: true },
+  { file: 'admin-icon-512.png', size: 512, svg: adminArtboard(512), opaque: true },
+  { file: 'admin-icon-192.png', size: 192, svg: adminArtboard(192), opaque: true },
+  { file: 'admin-splash.png', size: 2732, svg: adminSplash(2732), opaque: true },
 ];
 
 const pw = loadPlaywright();
@@ -159,6 +183,8 @@ const copies = {
     'favicon-512.png',
     'apple-touch-icon.png',
     'icon-rounded.svg',
+    'admin-icon-192.png',
+    'admin-icon-512.png',
   ],
 };
 for (const [dir, files] of Object.entries(copies)) {
@@ -167,4 +193,13 @@ for (const [dir, files] of Object.entries(copies)) {
   for (const f of files) copyFileSync(join(out, f), join(target, f));
 }
 copyFileSync(join(out, 'favicon-48.png'), join(root, 'apps/mobile/assets/images/favicon.png'));
+
+// Admin iOS app (Capacitor) icon + launch image, when the native project exists.
+const adminAssets = join(root, 'apps/admin/ios/App/App/Assets.xcassets');
+if (existsSync(adminAssets)) {
+  copyFileSync(join(out, 'admin-icon.png'), join(adminAssets, 'AppIcon.appiconset/AppIcon-512@2x.png'));
+  for (const f of ['splash-2732x2732.png', 'splash-2732x2732-1.png', 'splash-2732x2732-2.png']) {
+    copyFileSync(join(out, 'admin-splash.png'), join(adminAssets, 'Splash.imageset', f));
+  }
+}
 console.log('Brand assets rendered to branding/png and copied into apps/.');

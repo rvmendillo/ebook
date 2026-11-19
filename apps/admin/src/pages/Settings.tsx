@@ -39,10 +39,21 @@ export function Settings() {
 
   const download = async () => {
     const bundle = await data.exportLibrary();
+    const name = `polymath-library-${new Date().toISOString().slice(0, 10)}.json`;
     const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: 'application/json' });
+    // In the iOS app (and on phones) hand the file to the share sheet — Files, AirDrop, Mail…
+    const file = new File([blob], name, { type: 'application/json' });
+    if (navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: 'Polymath library export' });
+        return;
+      } catch (e) {
+        if ((e as Error).name === 'AbortError') return;
+      }
+    }
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `polymath-library-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = name;
     a.click();
     URL.revokeObjectURL(a.href);
   };

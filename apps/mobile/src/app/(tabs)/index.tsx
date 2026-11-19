@@ -89,7 +89,12 @@ export default function HomeScreen() {
                     {cat.icon}
                   </T>
                 </View>
-                <T variant="small" style={{ fontWeight: '700' }} numberOfLines={1} adjustsFontSizeToFit>
+                <T
+                  variant="small"
+                  style={{ fontWeight: '700', fontSize: 13, letterSpacing: -0.2 }}
+                  numberOfLines={1}
+                  adjustsFontSizeToFit
+                  minimumFontScale={0.8}>
                   {cat.name}
                 </T>
               </Pressable>

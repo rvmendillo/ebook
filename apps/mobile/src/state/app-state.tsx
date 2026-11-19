@@ -80,6 +80,8 @@ export interface AppState {
   refreshOwnership: () => Promise<void>;
   setSession: (session: repo.Session) => Promise<void>;
   signOut: () => Promise<void>;
+  /** Deletes the account (server data when live) and everything stored on this device. */
+  deleteAccount: () => Promise<void>;
   resetDemoPurchases: () => void;
 }
 
@@ -283,6 +285,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
     await setSession(next);
   }, [setSession]);
 
+  const deleteAccount = useCallback(async () => {
+    const next = await repo.deleteAccount();
+    setServer({ premium: false, credits: 0, unlocked: [] });
+    patchLocal((s) => ({ ...DEFAULT_LOCAL, settings: s.settings }));
+    await setSession(next);
+  }, [patchLocal, setSession]);
+
   const value = useMemo<AppState>(
     () => ({
       ready: localLoaded && accountReady && (catalogQuery.isSuccess || catalogQuery.isError),
@@ -318,6 +327,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       refreshOwnership,
       setSession,
       signOut,
+      deleteAccount,
       resetDemoPurchases: () => patchLocal((s) => ({ ...s, demo: DEFAULT_LOCAL.demo, adPasses: {} })),
     }),
     [
@@ -338,6 +348,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       refreshOwnership,
       setSession,
       signOut,
+      deleteAccount,
     ],
   );
 

@@ -191,6 +191,42 @@ export default function AccountScreen() {
         <Row icon="mail" title="Contact support" onPress={() => open(config?.links.support)} />
       </Card>
 
+      <Card style={styles.card}>
+        <Row
+          icon="trash"
+          title="Delete account"
+          subtitle={
+            hasBackend ? 'Erase your account, credits and owned items' : 'Erase everything stored on this device'
+          }
+          danger
+          onPress={() =>
+            Alert.alert(
+              'Delete your account?',
+              `This permanently deletes your account, credits, owned items, bookmarks and reading progress. ${
+                hasStore
+                  ? 'An active subscription is not cancelled automatically — cancel it in your store account first.'
+                  : ''
+              }`,
+              [
+                { text: 'Cancel', style: 'cancel' },
+                {
+                  text: 'Delete',
+                  style: 'destructive',
+                  onPress: async () => {
+                    try {
+                      await app.deleteAccount();
+                      Alert.alert('Account deleted', 'Your data has been removed.');
+                    } catch {
+                      Alert.alert('Couldn’t delete your account', 'Check your connection and try again.');
+                    }
+                  },
+                },
+              ],
+            )
+          }
+        />
+      </Card>
+
       <View style={styles.footer}>
         <T variant="caption" muted style={{ textAlign: 'center' }}>
           Polymath {version}

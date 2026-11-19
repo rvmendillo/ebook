@@ -438,3 +438,6 @@ verify_jwt = false
 
 [functions.sync-purchases]
 verify_jwt = false
+
+[functions.delete-account]
+verify_jwt = false

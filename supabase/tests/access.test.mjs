@@ -214,3 +214,22 @@ describe('admin', () => {
     );
   });
 });
+
+describe('account deletion', () => {
+  test('deleting a user removes their credits, owned items and subscription', async () => {
+    const count = async (table) =>
+      (await db.query(`select count(*)::int as n from public.${table} where user_id = $1`, [ALICE])).rows[0].n;
+    assert.ok((await count('credit_ledger')) > 0);
+    assert.ok((await count('unlocks')) > 0);
+    await db.query(`insert into public.subscriptions (user_id, is_active) values ($1, true) on conflict do nothing`, [
+      ALICE,
+    ]);
+    // What the delete-account edge function triggers via auth.admin.deleteUser().
+    await db.query('delete from auth.users where id = $1', [ALICE]);
+    for (const table of ['credit_ledger', 'unlocks', 'subscriptions']) {
+      assert.equal(await count(table), 0, `${table} rows must be deleted`);
+    }
+    // Content the admin created is unaffected.
+    assert.equal((await db.query('select count(*)::int as n from public.contents')).rows[0].n, 16);
+  });
+});
