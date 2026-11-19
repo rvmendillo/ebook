@@ -1,0 +1,55 @@
+name: Deploy Supabase backend
+
+# Manually run: Actions → "Deploy Supabase backend" → Run workflow.
+# Applies database migrations, sets function secrets and deploys the edge functions.
+# Secrets: SUPABASE_ACCESS_TOKEN, SUPABASE_PROJECT_REF, SUPABASE_DB_PASSWORD,
+#          REVENUECAT_SECRET_KEY, REVENUECAT_WEBHOOK_AUTH (optional until payments are set up)
+
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: Also load the starter library (supabase/seed.sql)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: supabase/setup-cli@v3
+        with:
+          version: latest
+
+      - name: Check secrets
+        run: |
+          for v in SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD PROJECT_REF; do
+            if [ -z "${!v}" ]; then echo "::error::Missing secret for $v (see docs/SETUP.md)"; exit 1; fi
+          done
+
+      - name: Link project
+        run: supabase link --project-ref "$PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
+
+      - name: Apply migrations
+        run: supabase db push --password "$SUPABASE_DB_PASSWORD" ${{ inputs.seed && '--include-seed' || '' }}
+
+      - name: Set function secrets
+        env:
+          RC_SECRET: ${{ secrets.REVENUECAT_SECRET_KEY }}
+          RC_WEBHOOK: ${{ secrets.REVENUECAT_WEBHOOK_AUTH }}
+        run: |
+          ARGS=()
+          [ -n "$RC_SECRET" ] && ARGS+=("REVENUECAT_SECRET_KEY=$RC_SECRET")
+          [ -n "$RC_WEBHOOK" ] && ARGS+=("REVENUECAT_WEBHOOK_AUTH=$RC_WEBHOOK")
+          if [ ${#ARGS[@]} -gt 0 ]; then supabase secrets set --project-ref "$PROJECT_REF" "${ARGS[@]}"; else echo "No RevenueCat secrets yet — skipping."; fi
+
+      - name: Deploy edge functions
+        run: supabase functions deploy --project-ref "$PROJECT_REF"

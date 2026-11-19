@@ -1,0 +1,8 @@
+[
+  { "slug": "math", "name": "Mathematics", "description": "From mental math tricks to calculus.", "icon": "∑", "color": "#2563EB", "sort_order": 1 },
+  { "slug": "music", "name": "Music", "description": "Theory, reading notation and smarter practice.", "icon": "♪", "color": "#DB2777", "sort_order": 2 },
+  { "slug": "programming", "name": "Programming", "description": "Learn to code, one concept at a time.", "icon": "</>", "color": "#059669", "sort_order": 3 },
+  { "slug": "science", "name": "Science", "description": "The why behind everyday wonders.", "icon": "⚛", "color": "#0891B2", "sort_order": 4 },
+  { "slug": "languages", "name": "Languages", "description": "Learn new words faster and keep them.", "icon": "Aa", "color": "#EA580C", "sort_order": 5 },
+  { "slug": "productivity", "name": "Productivity", "description": "Study smarter and focus deeper.", "icon": "⚡", "color": "#7C3AED", "sort_order": 6 }
+]

@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  mobile:
+    name: Mobile app · typecheck + JS bundles
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Lint
+        run: npx expo lint
+      - name: Bundle JavaScript for iOS and Android (Hermes)
+        run: npx expo export --platform ios --platform android --output-dir "$RUNNER_TEMP/bundle"
+        env:
+          CI: 1
+
+  admin:
+    name: Admin app · typecheck, lint, tests, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/admin
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/admin/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Unit tests (renderer, access rules, reader template)
+        run: npm test
+      - name: Sample library is up to date
+        run: |
+          npm run content
+          git diff --exit-code -- ../../supabase/seed.sql ../mobile/src/demo/library.json src/demo/library.json \
+            || (echo "::error::Run 'npm run content' in apps/admin and commit the result." && exit 1)
+      - name: Build
+        run: npm run build
+
+  database:
+    name: Database · migrations + access rules
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: supabase/tests
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: supabase/tests/package-lock.json
+      - run: npm ci
+      - run: npm test
+
+  functions:
+    name: Edge functions · deno check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Type-check functions
+        working-directory: supabase/functions
+        run: deno check --no-lock */index.ts
+      - name: Unit tests (RevenueCat parsing, credit crediting)
+        working-directory: supabase/functions
+        run: deno test --allow-env --no-lock _shared/

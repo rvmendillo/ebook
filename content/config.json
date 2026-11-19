@@ -1,0 +1,25 @@
+{
+  "ads": { "gate": "rewarded", "unlock_hours": 24, "banners": true },
+  "paywall": {
+    "headline": "Unlock the whole library",
+    "subheadline": "Every ebook, tutorial and tip — no ads, new lessons every week.",
+    "benefits": [
+      "All premium ebooks and tutorials",
+      "No ads, ever",
+      "Offline reading",
+      "New math, music & programming lessons weekly"
+    ]
+  },
+  "pricing": {
+    "credit_packs": [
+      { "id": "credits_10", "credits": 10, "fallback_price": "$1.99" },
+      { "id": "credits_30", "credits": 30, "fallback_price": "$4.99", "badge": "Popular" },
+      { "id": "credits_70", "credits": 70, "fallback_price": "$9.99", "badge": "Best value" }
+    ]
+  },
+  "links": {
+    "privacy": "https://example.com/privacy",
+    "terms": "https://example.com/terms",
+    "support": "mailto:support@example.com"
+  }
+}

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="512" height="512">
+    <defs><clipPath id="pm-clip"><rect width="1024" height="1024" rx="230"/></clipPath></defs>
+    <g clip-path="url(#pm-clip)">
+      
+  <defs>
+    <linearGradient id="pm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338CA"/>
+      <stop offset="0.55" stop-color="#5B3BE0"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <radialGradient id="pm-glow" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#pm-bg)"/>
+  <rect width="1024" height="1024" fill="url(#pm-glow)"/>
+
+      <g transform="translate(512 512) scale(0.84) translate(-512 -512)">
+  <!-- Polymath mark: an open book with a spark of insight. Transparent background. -->
+  <defs>
+    <linearGradient id="pm-spark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="pm-page-l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF0FF"/>
+    </linearGradient>
+    <linearGradient id="pm-page-r" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF0FF"/>
+    </linearGradient>
+  </defs>
+  <g id="pm-mark" transform="translate(0 -10)">
+    <!-- page stack / cover -->
+    <path d="M512 590 C 446 540, 340 520, 186 544 L 186 812 C 340 790, 446 808, 512 860 C 578 808, 684 790, 838 812 L 838 544 C 684 520, 578 540, 512 590 Z"
+          fill="#FFFFFF" fill-opacity="0.32"/>
+    <!-- left page -->
+    <path d="M500 566 C 440 516, 344 496, 214 516 L 214 784 C 344 764, 440 782, 500 832 Z" fill="url(#pm-page-l)"/>
+    <!-- right page -->
+    <path d="M524 566 C 584 516, 680 496, 810 516 L 810 784 C 680 764, 584 782, 524 832 Z" fill="url(#pm-page-r)"/>
+    <!-- text lines -->
+    <g fill="none" stroke="#C7CBF5" stroke-width="16" stroke-linecap="round">
+      <path d="M262 586 C 330 576, 398 584, 452 610"/>
+      <path d="M262 650 C 330 640, 398 648, 452 674"/>
+      <path d="M262 714 C 318 706, 372 712, 420 730"/>
+      <path d="M762 586 C 694 576, 626 584, 572 610"/>
+      <path d="M762 650 C 694 640, 626 648, 572 674"/>
+      <path d="M762 714 C 706 706, 652 712, 604 730"/>
+    </g>
+    <!-- spark of insight -->
+    <path d="M512 176 Q 527 318 640 334 Q 527 350 512 492 Q 497 350 384 334 Q 497 318 512 176 Z" fill="url(#pm-spark)"/>
+    <path d="M676 206 Q 681 246 716 252 Q 681 258 676 298 Q 671 258 636 252 Q 671 246 676 206 Z" fill="#FDE68A"/>
+    <path d="M352 240 Q 356 268 380 272 Q 356 276 352 304 Q 348 276 324 272 Q 348 268 352 240 Z" fill="#FDE68A" fill-opacity="0.9"/>
+  </g>
+</g>
+    </g>
+  </svg>

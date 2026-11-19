@@ -1,0 +1,6 @@
+{
+  "name": "@polymath/shared",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free code shared by apps/mobile and apps/admin (types, access rules, reader template)."
+}

@@ -1,0 +1,685 @@
+{
+ "generated_at": "2026-11-15T09:00:00.000Z",
+ "categories": [
+  {
+   "id": "30e9f2d3-0894-504f-b7b7-53e37593e15a",
+   "slug": "math",
+   "name": "Mathematics",
+   "description": "From mental math tricks to calculus.",
+   "icon": "∑",
+   "color": "#2563EB",
+   "sort_order": 1
+  },
+  {
+   "id": "4f085c6d-b4c1-5c34-aef5-b5ca388e0cc0",
+   "slug": "music",
+   "name": "Music",
+   "description": "Theory, reading notation and smarter practice.",
+   "icon": "♪",
+   "color": "#DB2777",
+   "sort_order": 2
+  },
+  {
+   "id": "736cec39-6626-53b2-86cd-b9dc2721f802",
+   "slug": "programming",
+   "name": "Programming",
+   "description": "Learn to code, one concept at a time.",
+   "icon": "</>",
+   "color": "#059669",
+   "sort_order": 3
+  },
+  {
+   "id": "ee0a1bf7-7752-52e0-ba07-cd7ffbb2ff79",
+   "slug": "science",
+   "name": "Science",
+   "description": "The why behind everyday wonders.",
+   "icon": "⚛",
+   "color": "#0891B2",
+   "sort_order": 4
+  },
+  {
+   "id": "b6e4b71f-deb3-572d-b604-489dd6d4192b",
+   "slug": "languages",
+   "name": "Languages",
+   "description": "Learn new words faster and keep them.",
+   "icon": "Aa",
+   "color": "#EA580C",
+   "sort_order": 5
+  },
+  {
+   "id": "93122706-1a9e-5262-8fe9-5450fed8b7d5",
+   "slug": "productivity",
+   "name": "Productivity",
+   "description": "Study smarter and focus deeper.",
+   "icon": "⚡",
+   "color": "#7C3AED",
+   "sort_order": 6
+  }
+ ],
+ "contents": [
+  {
+   "id": "3292e45e-4ad6-537e-8650-6c2a949e6eef",
+   "slug": "pythagorean-theorem-visually",
+   "title": "The Pythagorean Theorem, Visually",
+   "summary": "Why a² + b² = c² is true — with a proof you can see — and how to use it to measure the world.",
+   "kind": "tutorial",
+   "category_id": "30e9f2d3-0894-504f-b7b7-53e37593e15a",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "geometry",
+    "proofs",
+    "beginner"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 2,
+   "is_featured": true,
+   "status": "published",
+   "published_at": "2026-11-15T09:00:00.000Z",
+   "preview_html": "<p>Every right triangle hides the same secret. Label the two short sides <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span> and <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b</annotation></semantics></math></span>, and the long side opposite the right angle — the <strong>hypotenuse</strong> — <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span>. Then:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a^2 + b^2 = c^2</annotation></semantics></math></span></div>\n<p>It is one of the oldest results in mathematics, and you can <em>see</em> why it is true.</p>\n",
+   "headings": [
+    {
+     "id": "the-picture-proof",
+     "text": "The picture proof",
+     "level": 2
+    },
+    {
+     "id": "famous-whole-number-triangles",
+     "text": "Famous whole-number triangles",
+     "level": 2
+    },
+    {
+     "id": "using-it-the-ladder-problem",
+     "text": "Using it: the ladder problem",
+     "level": 2
+    },
+    {
+     "id": "bonus-distance-between-two-points",
+     "text": "Bonus: distance between two points",
+     "level": 2
+    },
+    {
+     "id": "practice",
+     "text": "Practice",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-15T09:00:00.000Z",
+   "updated_at": "2026-11-15T09:00:00.000Z",
+   "body_html": "<p>Every right triangle hides the same secret. Label the two short sides <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span> and <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b</annotation></semantics></math></span>, and the long side opposite the right angle — the <strong>hypotenuse</strong> — <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span>. Then:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a^2 + b^2 = c^2</annotation></semantics></math></span></div>\n<p>It is one of the oldest results in mathematics, and you can <em>see</em> why it is true.</p>\n<!-- more -->\n<h2 id=\"the-picture-proof\">The picture proof</h2>\n<p>Take a big square with side length <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">a + b</annotation></semantics></math></span> and place four copies of your triangle inside it, one in each corner. The space left in the middle is a tilted square whose side is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span>.</p>\n<p>Now count the area of the big square two different ways:</p>\n<ol>\n<li>As one big square: <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">(a+b)^2 = a^2 + 2ab + b^2</annotation></semantics></math></span></li>\n<li>As four triangles plus the middle square: <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">4 \\cdot \\tfrac{1}{2}ab + c^2 = 2ab + c^2</annotation></semantics></math></span></li>\n</ol>\n<p>Both describe the same area, so</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mtable rowspacing=\"0.25em\" columnalign=\"right left\" columnspacing=\"0em\"><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mrow><mrow></mrow><mo>=</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mrow><mrow></mrow><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding=\"application/x-tex\">\\begin{aligned}\na^2 + 2ab + b^2 &amp;= 2ab + c^2 \\\\\na^2 + b^2 &amp;= c^2\n\\end{aligned}</annotation></semantics></math></span></div>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Draw it yourself. Cut four paper triangles and slide them around inside the square — the proof clicks the moment you rearrange them.</p>\n</blockquote>\n<h2 id=\"famous-whole-number-triangles\">Famous whole-number triangles</h2>\n<p>Some right triangles have whole-number sides. They are called <strong>Pythagorean triples</strong>:</p>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>a</th>\n<th>b</th>\n<th>c</th>\n<th>Check</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n<td>9 + 16 = 25</td>\n</tr>\n<tr>\n<td>5</td>\n<td>12</td>\n<td>13</td>\n<td>25 + 144 = 169</td>\n</tr>\n<tr>\n<td>8</td>\n<td>15</td>\n<td>17</td>\n<td>64 + 225 = 289</td>\n</tr>\n<tr>\n<td>7</td>\n<td>24</td>\n<td>25</td>\n<td>49 + 576 = 625</td>\n</tr>\n</tbody>\n</table></div>\n<p>Builders have used the 3-4-5 triangle for centuries to make perfect right angles with nothing but a knotted rope.</p>\n<h2 id=\"using-it-the-ladder-problem\">Using it: the ladder problem</h2>\n<p>A 5 m ladder leans against a wall with its foot 3 m from the wall. How high up does it reach?</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>h</mi><mo>=</mo><msqrt><mrow><msup><mn>5</mn><mn>2</mn></msup><mo>−</mo><msup><mn>3</mn><mn>2</mn></msup></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>25</mn><mo>−</mo><mn>9</mn></mrow></msqrt><mo>=</mo><msqrt><mn>16</mn></msqrt><mo>=</mo><mn>4</mn><mtext> m</mtext></mrow><annotation encoding=\"application/x-tex\">h = \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4\\text{ m}</annotation></semantics></math></span></div>\n<h2 id=\"bonus-distance-between-two-points\">Bonus: distance between two points</h2>\n<p>The distance formula from coordinate geometry <em>is</em> the Pythagorean theorem in disguise. For points <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(x_1, y_1)</annotation></semantics></math></span> and <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(x_2, y_2)</annotation></semantics></math></span>:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>d</mi><mo>=</mo><msqrt><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mn>2</mn></msub><mo>−</mo><msub><mi>y</mi><mn>1</mn></msub><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding=\"application/x-tex\">d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}</annotation></semantics></math></span></div>\n<h2 id=\"practice\">Practice</h2>\n<ol>\n<li>A TV screen is 48 inches wide and 27 inches tall. What is its diagonal?</li>\n<li>Is a triangle with sides 6, 8 and 11 a right triangle?</li>\n</ol>\n<p><strong>Answers:</strong> (1) <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msqrt><mrow><msup><mn>48</mn><mn>2</mn></msup><mo>+</mo><msup><mn>27</mn><mn>2</mn></msup></mrow></msqrt><mo>=</mo><msqrt><mn>3033</mn></msqrt><mo>≈</mo><mn>55.1</mn></mrow><annotation encoding=\"application/x-tex\">\\sqrt{48^2 + 27^2} = \\sqrt{3033} \\approx 55.1</annotation></semantics></math></span> inches. (2) No — <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>36</mn><mo>+</mo><mn>64</mn><mo>=</mo><mn>100</mn><mo mathvariant=\"normal\">≠</mo><mn>121</mn></mrow><annotation encoding=\"application/x-tex\">36 + 64 = 100 \\ne 121</annotation></semantics></math></span>.</p>\n",
+   "body_md": "\nEvery right triangle hides the same secret. Label the two short sides $a$ and $b$, and the long side opposite the right angle — the **hypotenuse** — $c$. Then:\n\n$$\na^2 + b^2 = c^2\n$$\n\nIt is one of the oldest results in mathematics, and you can *see* why it is true.\n\n<!-- more -->\n\n## The picture proof\n\nTake a big square with side length $a + b$ and place four copies of your triangle inside it, one in each corner. The space left in the middle is a tilted square whose side is $c$.\n\nNow count the area of the big square two different ways:\n\n1. As one big square: $(a+b)^2 = a^2 + 2ab + b^2$\n2. As four triangles plus the middle square: $4 \\cdot \\tfrac{1}{2}ab + c^2 = 2ab + c^2$\n\nBoth describe the same area, so\n\n$$\n\\begin{aligned}\na^2 + 2ab + b^2 &= 2ab + c^2 \\\\\na^2 + b^2 &= c^2\n\\end{aligned}\n$$\n\n> [!TIP]\n> Draw it yourself. Cut four paper triangles and slide them around inside the square — the proof clicks the moment you rearrange them.\n\n## Famous whole-number triangles\n\nSome right triangles have whole-number sides. They are called **Pythagorean triples**:\n\n| a | b | c | Check |\n|---|---|---|---|\n| 3 | 4 | 5 | 9 + 16 = 25 |\n| 5 | 12 | 13 | 25 + 144 = 169 |\n| 8 | 15 | 17 | 64 + 225 = 289 |\n| 7 | 24 | 25 | 49 + 576 = 625 |\n\nBuilders have used the 3-4-5 triangle for centuries to make perfect right angles with nothing but a knotted rope.\n\n## Using it: the ladder problem\n\nA 5 m ladder leans against a wall with its foot 3 m from the wall. How high up does it reach?\n\n$$\nh = \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4\\text{ m}\n$$\n\n## Bonus: distance between two points\n\nThe distance formula from coordinate geometry *is* the Pythagorean theorem in disguise. For points $(x_1, y_1)$ and $(x_2, y_2)$:\n\n$$\nd = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\n$$\n\n## Practice\n\n1. A TV screen is 48 inches wide and 27 inches tall. What is its diagonal?\n2. Is a triangle with sides 6, 8 and 11 a right triangle?\n\n**Answers:** (1) $\\sqrt{48^2 + 27^2} = \\sqrt{3033} \\approx 55.1$ inches. (2) No — $36 + 64 = 100 \\ne 121$.\n"
+  },
+  {
+   "id": "4d9a60c3-64c9-5b4a-8a62-3d05ee126096",
+   "slug": "multiply-by-11-mental-math",
+   "title": "Multiply Any Two-Digit Number by 11 in Your Head",
+   "summary": "A two-second trick that makes you look like a human calculator.",
+   "kind": "tip",
+   "category_id": "30e9f2d3-0894-504f-b7b7-53e37593e15a",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "mental math",
+    "tricks"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-11-13T21:00:00.000Z",
+   "preview_html": "<p>To multiply a two-digit number by 11, <strong>split its digits apart and put their sum in the middle</strong>.</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mn>36</mn><mo>×</mo><mn>11</mn><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mn>3</mn><mtext> </mtext><munder accentunder=\"true\"><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo stretchy=\"false\">)</mo></mrow><mo stretchy=\"true\">‾</mo></munder><mtext> </mtext><mn>6</mn><mo>=</mo><mn>396</mn></mrow><annotation encoding=\"application/x-tex\">36 \\times 11 \\;\\to\\; 3\\,\\underline{(3+6)}\\,6 = 396</annotation></semantics></math></span></div>\n",
+   "headings": [
+    {
+     "id": "when-the-sum-is-10-or-more",
+     "text": "When the sum is 10 or more",
+     "level": 2
+    },
+    {
+     "id": "why-it-works",
+     "text": "Why it works",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-13T21:00:00.000Z",
+   "updated_at": "2026-11-13T21:00:00.000Z",
+   "body_html": "<p>To multiply a two-digit number by 11, <strong>split its digits apart and put their sum in the middle</strong>.</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mn>36</mn><mo>×</mo><mn>11</mn><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mn>3</mn><mtext> </mtext><munder accentunder=\"true\"><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo stretchy=\"false\">)</mo></mrow><mo stretchy=\"true\">‾</mo></munder><mtext> </mtext><mn>6</mn><mo>=</mo><mn>396</mn></mrow><annotation encoding=\"application/x-tex\">36 \\times 11 \\;\\to\\; 3\\,\\underline{(3+6)}\\,6 = 396</annotation></semantics></math></span></div>\n<!-- more -->\n<h2 id=\"when-the-sum-is-10-or-more\">When the sum is 10 or more</h2>\n<p>Carry the 1 into the first digit:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mn>78</mn><mo>×</mo><mn>11</mn><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mn>7</mn><mtext> </mtext><munder accentunder=\"true\"><mrow><mo stretchy=\"false\">(</mo><mn>7</mn><mo>+</mo><mn>8</mn><mo stretchy=\"false\">)</mo></mrow><mo stretchy=\"true\">‾</mo></munder><mtext> </mtext><mn>8</mn><mo>=</mo><mn>7</mn><mtext> </mtext><munder accentunder=\"true\"><mn>15</mn><mo stretchy=\"true\">‾</mo></munder><mtext> </mtext><mn>8</mn><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mn>858</mn></mrow><annotation encoding=\"application/x-tex\">78 \\times 11 \\;\\to\\; 7\\,\\underline{(7+8)}\\,8 = 7\\,\\underline{15}\\,8 \\;\\to\\; 858</annotation></semantics></math></span></div>\n<h2 id=\"why-it-works\">Why it works</h2>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11</mn><mo>×</mo><mi>n</mi><mo>=</mo><mn>10</mn><mi>n</mi><mo>+</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">11 \\times n = 10n + n</annotation></semantics></math></span>. Writing <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>10</mn><mi>a</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">n = 10a + b</annotation></semantics></math></span>:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mn>11</mn><mo stretchy=\"false\">(</mo><mn>10</mn><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>100</mn><mi>a</mi><mo>+</mo><mn>10</mn><mo stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">11(10a + b) = 100a + 10(a + b) + b</annotation></semantics></math></span></div>\n<p>The hundreds digit is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span>, the tens digit is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">a + b</annotation></semantics></math></span> and the ones digit is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b</annotation></semantics></math></span> — exactly the trick.</p>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Try these: 45 × 11, 62 × 11, 99 × 11. (Answers: 495, 682, 1089.)</p>\n</blockquote>\n",
+   "body_md": "\nTo multiply a two-digit number by 11, **split its digits apart and put their sum in the middle**.\n\n$$\n36 \\times 11 \\;\\to\\; 3\\,\\underline{(3+6)}\\,6 = 396\n$$\n\n<!-- more -->\n\n## When the sum is 10 or more\n\nCarry the 1 into the first digit:\n\n$$\n78 \\times 11 \\;\\to\\; 7\\,\\underline{(7+8)}\\,8 = 7\\,\\underline{15}\\,8 \\;\\to\\; 858\n$$\n\n## Why it works\n\n$11 \\times n = 10n + n$. Writing $n = 10a + b$:\n\n$$\n11(10a + b) = 100a + 10(a + b) + b\n$$\n\nThe hundreds digit is $a$, the tens digit is $a + b$ and the ones digit is $b$ — exactly the trick.\n\n> [!TIP]\n> Try these: 45 × 11, 62 × 11, 99 × 11. (Answers: 495, 682, 1089.)\n"
+  },
+  {
+   "id": "fc0ddde1-9d79-536e-9e0d-b13ec065b16a",
+   "slug": "calculus-in-a-weekend",
+   "title": "Calculus in a Weekend",
+   "summary": "Limits, derivatives and integrals explained with intuition first — a complete short course in five chapters.",
+   "kind": "ebook",
+   "category_id": "30e9f2d3-0894-504f-b7b7-53e37593e15a",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "calculus",
+    "ebook",
+    "intermediate"
+   ],
+   "access": "premium",
+   "price_credits": 15,
+   "reading_minutes": 2,
+   "is_featured": true,
+   "status": "published",
+   "published_at": "2026-11-12T09:00:00.000Z",
+   "preview_html": "<p>Calculus is the mathematics of change. Speed is the change in distance; acceleration is the change in speed; the area under a curve adds up infinitely many tiny changes. This short ebook gives you the core ideas in a weekend — intuition first, formulas second.</p>\n",
+   "headings": [
+    {
+     "id": "chapter-1-limits",
+     "text": "Chapter 1 · Limits",
+     "level": 2
+    },
+    {
+     "id": "chapter-2-derivatives",
+     "text": "Chapter 2 · Derivatives",
+     "level": 2
+    },
+    {
+     "id": "chapter-3-integrals",
+     "text": "Chapter 3 · Integrals",
+     "level": 2
+    },
+    {
+     "id": "chapter-4-applications",
+     "text": "Chapter 4 · Applications",
+     "level": 2
+    },
+    {
+     "id": "chapter-5-where-to-go-next",
+     "text": "Chapter 5 · Where to go next",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-12T09:00:00.000Z",
+   "updated_at": "2026-11-12T09:00:00.000Z",
+   "body_html": "<p>Calculus is the mathematics of change. Speed is the change in distance; acceleration is the change in speed; the area under a curve adds up infinitely many tiny changes. This short ebook gives you the core ideas in a weekend — intuition first, formulas second.</p>\n<!-- more -->\n<h2 id=\"chapter-1-limits\">Chapter 1 · Limits</h2>\n<p>A <strong>limit</strong> asks: <em>what value does <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">f(x)</annotation></semantics></math></span> approach as <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">x</annotation></semantics></math></span> gets closer and closer to some number?</em> We write</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>x</mi><mo>→</mo><mi>a</mi></mrow></munder><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>L</mi></mrow><annotation encoding=\"application/x-tex\">\\lim_{x \\to a} f(x) = L</annotation></semantics></math></span></div>\n<p>The function does not even need to be defined at <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span>. A classic example:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>x</mi></mrow><mi>x</mi></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1</annotation></semantics></math></span></div>\n<p>Plug in <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x = 0</annotation></semantics></math></span> and you get <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mfrac><mn>0</mn><mn>0</mn></mfrac></mstyle></mrow><annotation encoding=\"application/x-tex\">\\tfrac{0}{0}</annotation></semantics></math></span>, which is meaningless — yet values like <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding=\"application/x-tex\">x = 0.01</annotation></semantics></math></span> give <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.99998</mn><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">0.99998\\ldots</annotation></semantics></math></span>. The limit captures where the function is <em>heading</em>.</p>\n<blockquote class=\"callout callout-note\">\n<p class=\"callout-title\">Note</p>\n<p>Limits are the foundation everything else is built on. If a definition later looks scary, look for the limit hiding inside it.</p>\n</blockquote>\n<h2 id=\"chapter-2-derivatives\">Chapter 2 · Derivatives</h2>\n<p>The <strong>derivative</strong> measures instantaneous rate of change — the slope of the curve at a single point:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>f</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy=\"false\">)</mo><mo>−</mo><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mrow><annotation encoding=\"application/x-tex\">f&#x27;(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}</annotation></semantics></math></span></div>\n<p>You rarely compute it from the definition. A handful of rules cover most cases:</p>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Rule</th>\n<th>Formula</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Power</td>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mstyle><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>n</mi><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\dfrac{d}{dx} x^n = n x^{n-1}</annotation></semantics></math></span></td>\n</tr>\n<tr>\n<td>Sum</td>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>f</mi><mo>+</mo><mi>g</mi><msup><mo stretchy=\"false\">)</mo><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo>=</mo><msup><mi>f</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo>+</mo><msup><mi>g</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup></mrow><annotation encoding=\"application/x-tex\">(f + g)&#x27; = f&#x27; + g&#x27;</annotation></semantics></math></span></td>\n</tr>\n<tr>\n<td>Product</td>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>f</mi><mi>g</mi><msup><mo stretchy=\"false\">)</mo><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo>=</mo><msup><mi>f</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mi>g</mi><mo>+</mo><mi>f</mi><msup><mi>g</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup></mrow><annotation encoding=\"application/x-tex\">(fg)&#x27; = f&#x27;g + fg&#x27;</annotation></semantics></math></span></td>\n</tr>\n<tr>\n<td>Chain</td>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mstyle><mi>f</mi><mo stretchy=\"false\">(</mo><mi>g</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>=</mo><msup><mi>f</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>g</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mtext> </mtext><msup><mi>g</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\dfrac{d}{dx} f(g(x)) = f&#x27;(g(x))\\, g&#x27;(x)</annotation></semantics></math></span></td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Example.</strong> If a ball’s height is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>h</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>20</mn><mi>t</mi><mo>−</mo><mn>5</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">h(t) = 20t - 5t^2</annotation></semantics></math></span> metres, its velocity is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>h</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>20</mn><mo>−</mo><mn>10</mn><mi>t</mi></mrow><annotation encoding=\"application/x-tex\">h&#x27;(t) = 20 - 10t</annotation></semantics></math></span>. It stops rising when <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>h</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">h&#x27;(t) = 0</annotation></semantics></math></span>, at <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>t</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">t = 2</annotation></semantics></math></span> seconds, reaching <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>h</mi><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">h(2) = 20</annotation></semantics></math></span> metres.</p>\n<h2 id=\"chapter-3-integrals\">Chapter 3 · Integrals</h2>\n<p>An <strong>integral</strong> adds up infinitely many infinitely thin slices. The definite integral is the signed area under a curve:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mtext> </mtext><mi>d</mi><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">\\int_a^b f(x)\\,dx</annotation></semantics></math></span></div>\n<p>The <strong>Fundamental Theorem of Calculus</strong> connects integrals to derivatives: if <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>F</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">F&#x27;(x) = f(x)</annotation></semantics></math></span>, then</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy=\"false\">(</mo><mi>b</mi><mo stretchy=\"false\">)</mo><mo>−</mo><mi>F</mi><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\int_a^b f(x)\\,dx = F(b) - F(a)</annotation></semantics></math></span></div>\n<p><strong>Example.</strong> The area under <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">y = x^2</annotation></semantics></math></span> from 0 to 3:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>3</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><msubsup><mrow><mo fence=\"true\">[</mo><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo fence=\"true\">]</mo></mrow><mn>0</mn><mn>3</mn></msubsup><mo>=</mo><mfrac><mn>27</mn><mn>3</mn></mfrac><mo>−</mo><mn>0</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">\\int_0^3 x^2\\,dx = \\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{27}{3} - 0 = 9</annotation></semantics></math></span></div>\n<h2 id=\"chapter-4-applications\">Chapter 4 · Applications</h2>\n<p><strong>Optimization.</strong> You have 20 m of fence and want the largest rectangular pen. With width <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">x</annotation></semantics></math></span>, the length is <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mo>−</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">10 - x</annotation></semantics></math></span> and the area is</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>A</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>x</mi><mo stretchy=\"false\">(</mo><mn>10</mn><mo>−</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>10</mn><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo separator=\"true\">,</mo><mspace width=\"2em\"/><msup><mi>A</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>10</mn><mo>−</mo><mn>2</mn><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">A(x) = x(10 - x) = 10x - x^2, \\qquad A&#x27;(x) = 10 - 2x</annotation></semantics></math></span></div>\n<p>Setting <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>A</mi><mo mathvariant=\"normal\" lspace=\"0em\" rspace=\"0em\">′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">A&#x27;(x) = 0</annotation></semantics></math></span> gives <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">x = 5</annotation></semantics></math></span>: a <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>×</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">5 \\times 5</annotation></semantics></math></span> square with area <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>25</mn><msup><mtext> m</mtext><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">25\\text{ m}^2</annotation></semantics></math></span>.</p>\n<p><strong>Motion.</strong> Integrate velocity to get distance travelled; differentiate position to get velocity. The two operations undo each other.</p>\n<h2 id=\"chapter-5-where-to-go-next\">Chapter 5 · Where to go next</h2>\n<ul>\n<li>Practise derivatives until the rules are automatic.</li>\n<li>Learn <strong>u-substitution</strong> and <strong>integration by parts</strong> — the integral versions of the chain and product rules.</li>\n<li>Explore <strong>differential equations</strong>, which describe everything from population growth to circuits.</li>\n</ul>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Fifteen minutes a day beats a three-hour cram. Calculus rewards repetition.</p>\n</blockquote>\n",
+   "body_md": "\nCalculus is the mathematics of change. Speed is the change in distance; acceleration is the change in speed; the area under a curve adds up infinitely many tiny changes. This short ebook gives you the core ideas in a weekend — intuition first, formulas second.\n\n<!-- more -->\n\n## Chapter 1 · Limits\n\nA **limit** asks: *what value does $f(x)$ approach as $x$ gets closer and closer to some number?* We write\n\n$$\n\\lim_{x \\to a} f(x) = L\n$$\n\nThe function does not even need to be defined at $a$. A classic example:\n\n$$\n\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1\n$$\n\nPlug in $x = 0$ and you get $\\tfrac{0}{0}$, which is meaningless — yet values like $x = 0.01$ give $0.99998\\ldots$. The limit captures where the function is *heading*.\n\n> [!NOTE]\n> Limits are the foundation everything else is built on. If a definition later looks scary, look for the limit hiding inside it.\n\n## Chapter 2 · Derivatives\n\nThe **derivative** measures instantaneous rate of change — the slope of the curve at a single point:\n\n$$\nf'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\n$$\n\nYou rarely compute it from the definition. A handful of rules cover most cases:\n\n| Rule | Formula |\n|---|---|\n| Power | $\\dfrac{d}{dx} x^n = n x^{n-1}$ |\n| Sum | $(f + g)' = f' + g'$ |\n| Product | $(fg)' = f'g + fg'$ |\n| Chain | $\\dfrac{d}{dx} f(g(x)) = f'(g(x))\\, g'(x)$ |\n\n**Example.** If a ball's height is $h(t) = 20t - 5t^2$ metres, its velocity is $h'(t) = 20 - 10t$. It stops rising when $h'(t) = 0$, at $t = 2$ seconds, reaching $h(2) = 20$ metres.\n\n## Chapter 3 · Integrals\n\nAn **integral** adds up infinitely many infinitely thin slices. The definite integral is the signed area under a curve:\n\n$$\n\\int_a^b f(x)\\,dx\n$$\n\nThe **Fundamental Theorem of Calculus** connects integrals to derivatives: if $F'(x) = f(x)$, then\n\n$$\n\\int_a^b f(x)\\,dx = F(b) - F(a)\n$$\n\n**Example.** The area under $y = x^2$ from 0 to 3:\n\n$$\n\\int_0^3 x^2\\,dx = \\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{27}{3} - 0 = 9\n$$\n\n## Chapter 4 · Applications\n\n**Optimization.** You have 20 m of fence and want the largest rectangular pen. With width $x$, the length is $10 - x$ and the area is\n\n$$\nA(x) = x(10 - x) = 10x - x^2, \\qquad A'(x) = 10 - 2x\n$$\n\nSetting $A'(x) = 0$ gives $x = 5$: a $5 \\times 5$ square with area $25\\text{ m}^2$.\n\n**Motion.** Integrate velocity to get distance travelled; differentiate position to get velocity. The two operations undo each other.\n\n## Chapter 5 · Where to go next\n\n- Practise derivatives until the rules are automatic.\n- Learn **u-substitution** and **integration by parts** — the integral versions of the chain and product rules.\n- Explore **differential equations**, which describe everything from population growth to circuits.\n\n> [!TIP]\n> Fifteen minutes a day beats a three-hour cram. Calculus rewards repetition.\n"
+  },
+  {
+   "id": "24525248-6523-524c-accb-d81456f2990f",
+   "slug": "read-sheet-music-in-10-minutes",
+   "title": "Read Sheet Music in 10 Minutes",
+   "summary": "Staff, clefs, note names and rhythm — everything you need to read your first melody today.",
+   "kind": "tutorial",
+   "category_id": "4f085c6d-b4c1-5c34-aef5-b5ca388e0cc0",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "notation",
+    "beginner",
+    "reading"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 2,
+   "is_featured": true,
+   "status": "published",
+   "published_at": "2026-11-10T21:00:00.000Z",
+   "preview_html": "<p>Sheet music looks intimidating, but it answers just two questions: <strong>which note</strong> (up and down) and <strong>how long</strong> (left to right). Here is the melody you will be able to read by the end of this lesson:</p>\n<figure class=\"pm-music\" data-abc=\"X:1\nT:Twinkle, Twinkle, Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]\n\"><div class=\"abc-render\"></div><pre><code>X:1\nT:Twinkle, Twinkle, Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]\n</code></pre><figcaption>Twinkle, Twinkle, Little Star</figcaption></figure>\n",
+   "headings": [
+    {
+     "id": "1-the-staff-and-the-treble-clef",
+     "text": "1. The staff and the treble clef",
+     "level": 2
+    },
+    {
+     "id": "2-rhythm-how-long-each-note-lasts",
+     "text": "2. Rhythm: how long each note lasts",
+     "level": 2
+    },
+    {
+     "id": "3-read-the-melody",
+     "text": "3. Read the melody",
+     "level": 2
+    },
+    {
+     "id": "4-a-scale-to-practise",
+     "text": "4. A scale to practise",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-10T21:00:00.000Z",
+   "updated_at": "2026-11-10T21:00:00.000Z",
+   "body_html": "<p>Sheet music looks intimidating, but it answers just two questions: <strong>which note</strong> (up and down) and <strong>how long</strong> (left to right). Here is the melody you will be able to read by the end of this lesson:</p>\n<figure class=\"pm-music\" data-abc=\"X:1\nT:Twinkle, Twinkle, Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]\n\"><div class=\"abc-render\"></div><pre><code>X:1\nT:Twinkle, Twinkle, Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]\n</code></pre><figcaption>Twinkle, Twinkle, Little Star</figcaption></figure>\n<!-- more -->\n<h2 id=\"1-the-staff-and-the-treble-clef\">1. The staff and the treble clef</h2>\n<p>Music is written on a <strong>staff</strong> of five lines. The swirly <strong>treble clef</strong> at the start wraps around the second line from the bottom, marking it as the note <strong>G</strong>.</p>\n<ul>\n<li>Notes on the <strong>lines</strong>, bottom to top: <strong>E G B D F</strong> — “Every Good Boy Does Fine”.</li>\n<li>Notes in the <strong>spaces</strong>, bottom to top: <strong>F A C E</strong> — it spells <em>face</em>.</li>\n</ul>\n<p>Middle C sits on its own short line (a <em>ledger line</em>) just below the staff.</p>\n<h2 id=\"2-rhythm-how-long-each-note-lasts\">2. Rhythm: how long each note lasts</h2>\n<p>In the most common time signature, <strong>4/4</strong>, each bar holds four beats:</p>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Note</th>\n<th>Beats in 4/4</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole note (hollow, no stem)</td>\n<td>4</td>\n</tr>\n<tr>\n<td>Half note (hollow, with stem)</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Quarter note (filled, with stem)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Eighth note (filled, with a flag)</td>\n<td>½</td>\n</tr>\n</tbody>\n</table></div>\n<p>The top number of the time signature says how many beats are in a bar; the bottom number says which note gets one beat (4 = quarter note).</p>\n<h2 id=\"3-read-the-melody\">3. Read the melody</h2>\n<p>Go back to <em>Twinkle, Twinkle</em> above and read it bar by bar:</p>\n<ol>\n<li>C C G G — four quarter notes</li>\n<li>A A G — two quarters, then a <strong>half note</strong> held for two beats</li>\n<li>F F E E</li>\n<li>D D C — ending on a half note</li>\n</ol>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Clap the rhythm first, then say the note names, and only then play. Separating the two skills makes both easier.</p>\n</blockquote>\n<h2 id=\"4-a-scale-to-practise\">4. A scale to practise</h2>\n<p>The C major scale uses only the white keys of a piano:</p>\n<figure class=\"pm-music\" data-abc=\"X:2\nT:C major scale\nM:4/4\nL:1/4\nK:C\nC D E F | G A B c | c B A G | F E D C |]\n\"><div class=\"abc-render\"></div><pre><code>X:2\nT:C major scale\nM:4/4\nL:1/4\nK:C\nC D E F | G A B c | c B A G | F E D C |]\n</code></pre><figcaption>C major scale</figcaption></figure>\n<p>Read it once a day this week and note-reading will start to feel automatic.</p>\n",
+   "body_md": "\nSheet music looks intimidating, but it answers just two questions: **which note** (up and down) and **how long** (left to right). Here is the melody you will be able to read by the end of this lesson:\n\n```abc\nX:1\nT:Twinkle, Twinkle, Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]\n```\n\n<!-- more -->\n\n## 1. The staff and the treble clef\n\nMusic is written on a **staff** of five lines. The swirly **treble clef** at the start wraps around the second line from the bottom, marking it as the note **G**.\n\n- Notes on the **lines**, bottom to top: **E G B D F** — \"Every Good Boy Does Fine\".\n- Notes in the **spaces**, bottom to top: **F A C E** — it spells *face*.\n\nMiddle C sits on its own short line (a *ledger line*) just below the staff.\n\n## 2. Rhythm: how long each note lasts\n\nIn the most common time signature, **4/4**, each bar holds four beats:\n\n| Note | Beats in 4/4 |\n|---|---|\n| Whole note (hollow, no stem) | 4 |\n| Half note (hollow, with stem) | 2 |\n| Quarter note (filled, with stem) | 1 |\n| Eighth note (filled, with a flag) | ½ |\n\nThe top number of the time signature says how many beats are in a bar; the bottom number says which note gets one beat (4 = quarter note).\n\n## 3. Read the melody\n\nGo back to *Twinkle, Twinkle* above and read it bar by bar:\n\n1. C C G G — four quarter notes\n2. A A G — two quarters, then a **half note** held for two beats\n3. F F E E\n4. D D C — ending on a half note\n\n> [!TIP]\n> Clap the rhythm first, then say the note names, and only then play. Separating the two skills makes both easier.\n\n## 4. A scale to practise\n\nThe C major scale uses only the white keys of a piano:\n\n```abc\nX:2\nT:C major scale\nM:4/4\nL:1/4\nK:C\nC D E F | G A B c | c B A G | F E D C |]\n```\n\nRead it once a day this week and note-reading will start to feel automatic.\n"
+  },
+  {
+   "id": "78ce58a3-fab9-5346-b9ae-ea76ea2263b7",
+   "slug": "circle-of-fifths-explained",
+   "title": "The Circle of Fifths, Explained",
+   "summary": "The single diagram that explains key signatures, relative minors and why some chords just sound right together.",
+   "kind": "article",
+   "category_id": "4f085c6d-b4c1-5c34-aef5-b5ca388e0cc0",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "theory",
+    "keys",
+    "chords"
+   ],
+   "access": "premium",
+   "price_credits": 5,
+   "reading_minutes": 2,
+   "is_featured": true,
+   "status": "published",
+   "published_at": "2026-11-09T09:00:00.000Z",
+   "preview_html": "<p>The circle of fifths arranges all twelve major keys so that each step clockwise moves up a <strong>perfect fifth</strong> — and adds exactly one sharp to the key signature. Once you understand it, key signatures stop being something to memorise.</p>\n",
+   "headings": [
+    {
+     "id": "going-clockwise-sharps",
+     "text": "Going clockwise: sharps",
+     "level": 2
+    },
+    {
+     "id": "going-anticlockwise-flats",
+     "text": "Going anticlockwise: flats",
+     "level": 2
+    },
+    {
+     "id": "relative-minors",
+     "text": "Relative minors",
+     "level": 2
+    },
+    {
+     "id": "why-neighbouring-keys-sound-good-together",
+     "text": "Why neighbouring keys sound good together",
+     "level": 2
+    },
+    {
+     "id": "practise-it",
+     "text": "Practise it",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-09T09:00:00.000Z",
+   "updated_at": "2026-11-09T09:00:00.000Z",
+   "body_html": "<p>The circle of fifths arranges all twelve major keys so that each step clockwise moves up a <strong>perfect fifth</strong> — and adds exactly one sharp to the key signature. Once you understand it, key signatures stop being something to memorise.</p>\n<!-- more -->\n<h2 id=\"going-clockwise-sharps\">Going clockwise: sharps</h2>\n<p>Start at <strong>C major</strong> (no sharps or flats) at the top. Each clockwise step goes up a fifth:</p>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Key</th>\n<th>Sharps</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>C</td>\n<td>0</td>\n</tr>\n<tr>\n<td>G</td>\n<td>1 — F♯</td>\n</tr>\n<tr>\n<td>D</td>\n<td>2 — F♯ C♯</td>\n</tr>\n<tr>\n<td>A</td>\n<td>3 — F♯ C♯ G♯</td>\n</tr>\n<tr>\n<td>E</td>\n<td>4</td>\n</tr>\n<tr>\n<td>B</td>\n<td>5</td>\n</tr>\n<tr>\n<td>F♯</td>\n<td>6</td>\n</tr>\n<tr>\n<td>C♯</td>\n<td>7</td>\n</tr>\n</tbody>\n</table></div>\n<p>Sharps are always added in the same order: <strong>F C G D A E B</strong> — “Father Charles Goes Down And Ends Battle”.</p>\n<h2 id=\"going-anticlockwise-flats\">Going anticlockwise: flats</h2>\n<p>Moving the other way goes <em>down</em> a fifth and adds a flat each time: <strong>F</strong> (1♭), <strong>B♭</strong> (2), <strong>E♭</strong> (3), <strong>A♭</strong> (4), <strong>D♭</strong> (5), <strong>G♭</strong> (6), <strong>C♭</strong> (7).</p>\n<p>Flats appear in the reverse order: <strong>B E A D G C F</strong> — “Battle Ends And Down Goes Charles’ Father”.</p>\n<h2 id=\"relative-minors\">Relative minors</h2>\n<p>Every major key shares its key signature with a <strong>relative minor</strong>, found three semitones below it: C major ↔ A minor, G major ↔ E minor, F major ↔ D minor. On most diagrams these sit on an inner ring.</p>\n<h2 id=\"why-neighbouring-keys-sound-good-together\">Why neighbouring keys sound good together</h2>\n<p>Keys next to each other on the circle share six of their seven notes. That is why the chords built on neighbouring keys — I, IV and V — form the backbone of countless songs. Here is the famous <strong>I–V–vi–IV</strong> progression in C major:</p>\n<figure class=\"pm-music\" data-abc=\"X:1\nT:I–V–vi–IV in C major\nM:4/4\nL:1/2\nK:C\n&quot;C&quot;[CEG]2 | &quot;G&quot;[B,DG]2 | &quot;Am&quot;[A,CE]2 | &quot;F&quot;[A,CF]2 |]\n\"><div class=\"abc-render\"></div><pre><code>X:1\nT:I–V–vi–IV in C major\nM:4/4\nL:1/2\nK:C\n&quot;C&quot;[CEG]2 | &quot;G&quot;[B,DG]2 | &quot;Am&quot;[A,CE]2 | &quot;F&quot;[A,CF]2 |]\n</code></pre><figcaption>I–V–vi–IV in C major</figcaption></figure>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>To find the I, IV and V chords of any key, look at the key on the circle and its two neighbours: the one anticlockwise is IV, the one clockwise is V.</p>\n</blockquote>\n<h2 id=\"practise-it\">Practise it</h2>\n<ol>\n<li>How many sharps does <strong>A major</strong> have? <em>(3)</em></li>\n<li>What is the relative minor of <strong>E♭ major</strong>? <em>(C minor)</em></li>\n<li>Which chords are I, IV and V in <strong>G major</strong>? <em>(G, C, D)</em></li>\n</ol>\n",
+   "body_md": "\nThe circle of fifths arranges all twelve major keys so that each step clockwise moves up a **perfect fifth** — and adds exactly one sharp to the key signature. Once you understand it, key signatures stop being something to memorise.\n\n<!-- more -->\n\n## Going clockwise: sharps\n\nStart at **C major** (no sharps or flats) at the top. Each clockwise step goes up a fifth:\n\n| Key | Sharps |\n|---|---|\n| C | 0 |\n| G | 1 — F♯ |\n| D | 2 — F♯ C♯ |\n| A | 3 — F♯ C♯ G♯ |\n| E | 4 |\n| B | 5 |\n| F♯ | 6 |\n| C♯ | 7 |\n\nSharps are always added in the same order: **F C G D A E B** — \"Father Charles Goes Down And Ends Battle\".\n\n## Going anticlockwise: flats\n\nMoving the other way goes *down* a fifth and adds a flat each time: **F** (1♭), **B♭** (2), **E♭** (3), **A♭** (4), **D♭** (5), **G♭** (6), **C♭** (7).\n\nFlats appear in the reverse order: **B E A D G C F** — \"Battle Ends And Down Goes Charles' Father\".\n\n## Relative minors\n\nEvery major key shares its key signature with a **relative minor**, found three semitones below it: C major ↔ A minor, G major ↔ E minor, F major ↔ D minor. On most diagrams these sit on an inner ring.\n\n## Why neighbouring keys sound good together\n\nKeys next to each other on the circle share six of their seven notes. That is why the chords built on neighbouring keys — I, IV and V — form the backbone of countless songs. Here is the famous **I–V–vi–IV** progression in C major:\n\n```abc\nX:1\nT:I–V–vi–IV in C major\nM:4/4\nL:1/2\nK:C\n\"C\"[CEG]2 | \"G\"[B,DG]2 | \"Am\"[A,CE]2 | \"F\"[A,CF]2 |]\n```\n\n> [!TIP]\n> To find the I, IV and V chords of any key, look at the key on the circle and its two neighbours: the one anticlockwise is IV, the one clockwise is V.\n\n## Practise it\n\n1. How many sharps does **A major** have? *(3)*\n2. What is the relative minor of **E♭ major**? *(C minor)*\n3. Which chords are I, IV and V in **G major**? *(G, C, D)*\n"
+  },
+  {
+   "id": "3a41fe7d-a90d-5104-b952-ca95589c906e",
+   "slug": "metronome-60-percent-rule",
+   "title": "The 60% Metronome Rule",
+   "summary": "Practise slowly on purpose and you will reach full speed faster. Here's the exact routine.",
+   "kind": "tip",
+   "category_id": "4f085c6d-b4c1-5c34-aef5-b5ca388e0cc0",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "practice",
+    "technique"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-11-07T21:00:00.000Z",
+   "preview_html": "<p>Mistakes you repeat at full speed become habits. Slow, perfect repetitions build accuracy that survives when you speed up.</p>\n",
+   "headings": [
+    {
+     "id": "the-routine",
+     "text": "The routine",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-07T21:00:00.000Z",
+   "updated_at": "2026-11-07T21:00:00.000Z",
+   "body_html": "<p>Mistakes you repeat at full speed become habits. Slow, perfect repetitions build accuracy that survives when you speed up.</p>\n<!-- more -->\n<h2 id=\"the-routine\">The routine</h2>\n<ol>\n<li>Find your <strong>target tempo</strong> — say 120 BPM.</li>\n<li>Set the metronome to <strong>60%</strong> of it: <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>120</mn><mo>×</mo><mn>0.6</mn><mo>=</mo><mn>72</mn></mrow><annotation encoding=\"application/x-tex\">120 \\times 0.6 = 72</annotation></semantics></math></span> BPM.</li>\n<li>Play the passage <strong>three times in a row with no mistakes</strong>.</li>\n<li>Raise the tempo by <strong>4–5 BPM</strong> and repeat.</li>\n<li>If you make a mistake twice, drop back one step.</li>\n</ol>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Stop for the day when you reach a tempo you can’t play cleanly three times. Your brain consolidates the skill overnight — tomorrow’s starting point will be higher.</p>\n</blockquote>\n<p>It feels slow. It <em>is</em> slow. And it is the fastest way to play fast.</p>\n",
+   "body_md": "\nMistakes you repeat at full speed become habits. Slow, perfect repetitions build accuracy that survives when you speed up.\n\n<!-- more -->\n\n## The routine\n\n1. Find your **target tempo** — say 120 BPM.\n2. Set the metronome to **60%** of it: $120 \\times 0.6 = 72$ BPM.\n3. Play the passage **three times in a row with no mistakes**.\n4. Raise the tempo by **4–5 BPM** and repeat.\n5. If you make a mistake twice, drop back one step.\n\n> [!TIP]\n> Stop for the day when you reach a tempo you can't play cleanly three times. Your brain consolidates the skill overnight — tomorrow's starting point will be higher.\n\nIt feels slow. It *is* slow. And it is the fastest way to play fast.\n"
+  },
+  {
+   "id": "f5aedf96-c9fc-5bf0-a4a5-335e7993356b",
+   "slug": "python-for-absolute-beginners",
+   "title": "Python for Absolute Beginners",
+   "summary": "Go from zero to writing real programs. Six short chapters, plenty of examples and a mini project.",
+   "kind": "ebook",
+   "category_id": "736cec39-6626-53b2-86cd-b9dc2721f802",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "python",
+    "ebook",
+    "beginner"
+   ],
+   "access": "premium",
+   "price_credits": 15,
+   "reading_minutes": 2,
+   "is_featured": true,
+   "status": "published",
+   "published_at": "2026-11-06T09:00:00.000Z",
+   "preview_html": "<p>Python reads almost like English, runs everywhere, and powers everything from websites to data science and AI. This ebook takes you from your very first line of code to a small program you build yourself.</p>\n",
+   "headings": [
+    {
+     "id": "chapter-1-setting-up",
+     "text": "Chapter 1 · Setting up",
+     "level": 2
+    },
+    {
+     "id": "chapter-2-variables-and-types",
+     "text": "Chapter 2 · Variables and types",
+     "level": 2
+    },
+    {
+     "id": "chapter-3-making-decisions-and-repeating",
+     "text": "Chapter 3 · Making decisions and repeating",
+     "level": 2
+    },
+    {
+     "id": "chapter-4-functions",
+     "text": "Chapter 4 · Functions",
+     "level": 2
+    },
+    {
+     "id": "chapter-5-lists-and-dictionaries",
+     "text": "Chapter 5 · Lists and dictionaries",
+     "level": 2
+    },
+    {
+     "id": "chapter-6-mini-project-word-counter",
+     "text": "Chapter 6 · Mini project: word counter",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-06T09:00:00.000Z",
+   "updated_at": "2026-11-06T09:00:00.000Z",
+   "body_html": "<p>Python reads almost like English, runs everywhere, and powers everything from websites to data science and AI. This ebook takes you from your very first line of code to a small program you build yourself.</p>\n<!-- more -->\n<h2 id=\"chapter-1-setting-up\">Chapter 1 · Setting up</h2>\n<p>Install Python 3 from python.org (on macOS and Linux it is often already installed). Open a terminal and start the interactive interpreter:</p>\n<pre class=\"hljs\"><code class=\"language-bash\">python3\n</code></pre>\n<p>Type your first line of code and press Enter:</p>\n<pre class=\"hljs\"><code class=\"language-python\"><span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Hello, world!&quot;</span>)\n</code></pre>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>The interpreter is a calculator too. Try <code>2 ** 10</code> or <code>7 / 2</code>.</p>\n</blockquote>\n<h2 id=\"chapter-2-variables-and-types\">Chapter 2 · Variables and types</h2>\n<p>A <strong>variable</strong> is a name for a value:</p>\n<pre class=\"hljs\"><code class=\"language-python\">name = <span class=\"hljs-string\">&quot;Ada&quot;</span>          <span class=\"hljs-comment\"># str  — text</span>\nage = <span class=\"hljs-number\">36</span>              <span class=\"hljs-comment\"># int  — whole number</span>\nheight = <span class=\"hljs-number\">1.65</span>         <span class=\"hljs-comment\"># float — decimal number</span>\nis_learning = <span class=\"hljs-literal\">True</span>    <span class=\"hljs-comment\"># bool — True or False</span>\n\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{name}</span> is <span class=\"hljs-subst\">{age}</span> years old&quot;</span>)\n</code></pre>\n<p>The <code>f</code> before the quotes makes an <strong>f-string</strong>: anything inside <code>{}</code> is evaluated and inserted.</p>\n<h2 id=\"chapter-3-making-decisions-and-repeating\">Chapter 3 · Making decisions and repeating</h2>\n<pre class=\"hljs\"><code class=\"language-python\">temperature = <span class=\"hljs-number\">23</span>\n\n<span class=\"hljs-keyword\">if</span> temperature &gt; <span class=\"hljs-number\">30</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Hot!&quot;</span>)\n<span class=\"hljs-keyword\">elif</span> temperature &gt; <span class=\"hljs-number\">15</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Pleasant.&quot;</span>)\n<span class=\"hljs-keyword\">else</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Bring a jacket.&quot;</span>)\n\n<span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">3</span>):\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Lap&quot;</span>, i + <span class=\"hljs-number\">1</span>)\n\ncount = <span class=\"hljs-number\">3</span>\n<span class=\"hljs-keyword\">while</span> count &gt; <span class=\"hljs-number\">0</span>:\n    <span class=\"hljs-built_in\">print</span>(count)\n    count -= <span class=\"hljs-number\">1</span>\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Lift-off!&quot;</span>)\n</code></pre>\n<p>Indentation matters in Python: the indented lines belong to the <code>if</code>, <code>for</code> or <code>while</code> above them.</p>\n<h2 id=\"chapter-4-functions\">Chapter 4 · Functions</h2>\n<p>Functions package up code you want to reuse:</p>\n<pre class=\"hljs\"><code class=\"language-python\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">area_of_circle</span>(<span class=\"hljs-params\">radius: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;Return the area of a circle.&quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">3.14159</span> * radius ** <span class=\"hljs-number\">2</span>\n\n<span class=\"hljs-built_in\">print</span>(area_of_circle(<span class=\"hljs-number\">2</span>))   <span class=\"hljs-comment\"># 12.56636</span>\n</code></pre>\n<h2 id=\"chapter-5-lists-and-dictionaries\">Chapter 5 · Lists and dictionaries</h2>\n<pre class=\"hljs\"><code class=\"language-python\">scores = [<span class=\"hljs-number\">72</span>, <span class=\"hljs-number\">95</span>, <span class=\"hljs-number\">88</span>]\nscores.append(<span class=\"hljs-number\">100</span>)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-built_in\">max</span>(scores), <span class=\"hljs-built_in\">sum</span>(scores) / <span class=\"hljs-built_in\">len</span>(scores))   <span class=\"hljs-comment\"># 100 88.75</span>\n\ncapitals = {<span class=\"hljs-string\">&quot;France&quot;</span>: <span class=\"hljs-string\">&quot;Paris&quot;</span>, <span class=\"hljs-string\">&quot;Japan&quot;</span>: <span class=\"hljs-string\">&quot;Tokyo&quot;</span>}\ncapitals[<span class=\"hljs-string\">&quot;Kenya&quot;</span>] = <span class=\"hljs-string\">&quot;Nairobi&quot;</span>\n<span class=\"hljs-keyword\">for</span> country, city <span class=\"hljs-keyword\">in</span> capitals.items():\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;The capital of <span class=\"hljs-subst\">{country}</span> is <span class=\"hljs-subst\">{city}</span>&quot;</span>)\n</code></pre>\n<h2 id=\"chapter-6-mini-project-word-counter\">Chapter 6 · Mini project: word counter</h2>\n<p>Put it all together — a program that finds the most common words in a piece of text:</p>\n<pre class=\"hljs\"><code class=\"language-python\"><span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> Counter\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">top_words</span>(<span class=\"hljs-params\">text: <span class=\"hljs-built_in\">str</span>, n: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">3</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">str</span>, <span class=\"hljs-built_in\">int</span>]]:\n    words = [w.strip(<span class=\"hljs-string\">&quot;.,!?;:&quot;</span>).lower() <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> text.split()]\n    <span class=\"hljs-keyword\">return</span> Counter(w <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> words <span class=\"hljs-keyword\">if</span> w).most_common(n)\n\nspeech = <span class=\"hljs-string\">&quot;The more you read, the more you know. The more you know, the further you go.&quot;</span>\n<span class=\"hljs-built_in\">print</span>(top_words(speech))\n<span class=\"hljs-comment\"># [(&#x27;the&#x27;, 4), (&#x27;you&#x27;, 4), (&#x27;more&#x27;, 3)]</span>\n</code></pre>\n<blockquote class=\"callout callout-note\">\n<p class=\"callout-title\">Note</p>\n<p><code>Counter.most_common</code> lists the most frequent words first; words with the same count keep the order in which they first appeared.</p>\n</blockquote>\n<p><strong>Next steps:</strong> read files with <code>open()</code>, explore the standard library, and build something you care about — a budget tracker, a quiz, a tiny game.</p>\n",
+   "body_md": "\nPython reads almost like English, runs everywhere, and powers everything from websites to data science and AI. This ebook takes you from your very first line of code to a small program you build yourself.\n\n<!-- more -->\n\n## Chapter 1 · Setting up\n\nInstall Python 3 from python.org (on macOS and Linux it is often already installed). Open a terminal and start the interactive interpreter:\n\n```bash\npython3\n```\n\nType your first line of code and press Enter:\n\n```python\nprint(\"Hello, world!\")\n```\n\n> [!TIP]\n> The interpreter is a calculator too. Try `2 ** 10` or `7 / 2`.\n\n## Chapter 2 · Variables and types\n\nA **variable** is a name for a value:\n\n```python\nname = \"Ada\"          # str  — text\nage = 36              # int  — whole number\nheight = 1.65         # float — decimal number\nis_learning = True    # bool — True or False\n\nprint(f\"{name} is {age} years old\")\n```\n\nThe `f` before the quotes makes an **f-string**: anything inside `{}` is evaluated and inserted.\n\n## Chapter 3 · Making decisions and repeating\n\n```python\ntemperature = 23\n\nif temperature > 30:\n    print(\"Hot!\")\nelif temperature > 15:\n    print(\"Pleasant.\")\nelse:\n    print(\"Bring a jacket.\")\n\nfor i in range(3):\n    print(\"Lap\", i + 1)\n\ncount = 3\nwhile count > 0:\n    print(count)\n    count -= 1\nprint(\"Lift-off!\")\n```\n\nIndentation matters in Python: the indented lines belong to the `if`, `for` or `while` above them.\n\n## Chapter 4 · Functions\n\nFunctions package up code you want to reuse:\n\n```python\ndef area_of_circle(radius: float) -> float:\n    \"\"\"Return the area of a circle.\"\"\"\n    return 3.14159 * radius ** 2\n\nprint(area_of_circle(2))   # 12.56636\n```\n\n## Chapter 5 · Lists and dictionaries\n\n```python\nscores = [72, 95, 88]\nscores.append(100)\nprint(max(scores), sum(scores) / len(scores))   # 100 88.75\n\ncapitals = {\"France\": \"Paris\", \"Japan\": \"Tokyo\"}\ncapitals[\"Kenya\"] = \"Nairobi\"\nfor country, city in capitals.items():\n    print(f\"The capital of {country} is {city}\")\n```\n\n## Chapter 6 · Mini project: word counter\n\nPut it all together — a program that finds the most common words in a piece of text:\n\n```python\nfrom collections import Counter\n\ndef top_words(text: str, n: int = 3) -> list[tuple[str, int]]:\n    words = [w.strip(\".,!?;:\").lower() for w in text.split()]\n    return Counter(w for w in words if w).most_common(n)\n\nspeech = \"The more you read, the more you know. The more you know, the further you go.\"\nprint(top_words(speech))\n# [('the', 4), ('you', 4), ('more', 3)]\n```\n\n> [!NOTE]\n> `Counter.most_common` lists the most frequent words first; words with the same count keep the order in which they first appeared.\n\n**Next steps:** read files with `open()`, explore the standard library, and build something you care about — a budget tracker, a quiz, a tiny game.\n"
+  },
+  {
+   "id": "0defbfdd-58b4-57f8-aba0-e2642ec1fa58",
+   "slug": "big-o-notation-without-the-jargon",
+   "title": "Big-O Notation Without the Jargon",
+   "summary": "How to tell whether your code will still be fast when the data gets big — explained with everyday examples.",
+   "kind": "article",
+   "category_id": "736cec39-6626-53b2-86cd-b9dc2721f802",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "algorithms",
+    "complexity",
+    "interviews"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 2,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-11-04T21:00:00.000Z",
+   "preview_html": "<p><strong>Big-O notation</strong> describes how the work an algorithm does grows as its input grows. It ignores the details and asks one question: <em>if the data gets ten times bigger, how much slower does this get?</em></p>\n",
+   "headings": [
+    {
+     "id": "the-common-growth-rates",
+     "text": "The common growth rates",
+     "level": 2
+    },
+    {
+     "id": "seeing-it-in-code",
+     "text": "Seeing it in code",
+     "level": 2
+    },
+    {
+     "id": "the-fix-is-often-a-better-data-structure",
+     "text": "The fix is often a better data structure",
+     "level": 2
+    },
+    {
+     "id": "why-logarithms-are-magic",
+     "text": "Why logarithms are magic",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-04T21:00:00.000Z",
+   "updated_at": "2026-11-04T21:00:00.000Z",
+   "body_html": "<p><strong>Big-O notation</strong> describes how the work an algorithm does grows as its input grows. It ignores the details and asks one question: <em>if the data gets ten times bigger, how much slower does this get?</em></p>\n<!-- more -->\n<h2 id=\"the-common-growth-rates\">The common growth rates</h2>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Big-O</th>\n<th>Name</th>\n<th>Everyday example</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(1)</annotation></semantics></math></span></td>\n<td>constant</td>\n<td>Looking up a word by page number</td>\n</tr>\n<tr>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(\\log n)</annotation></semantics></math></span></td>\n<td>logarithmic</td>\n<td>Finding a name in a phone book by halving</td>\n</tr>\n<tr>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n)</annotation></semantics></math></span></td>\n<td>linear</td>\n<td>Reading every page of a book</td>\n</tr>\n<tr>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n \\log n)</annotation></semantics></math></span></td>\n<td>linearithmic</td>\n<td>Sorting a deck of cards efficiently</td>\n</tr>\n<tr>\n<td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n^2)</annotation></semantics></math></span></td>\n<td>quadratic</td>\n<td>Comparing every person in a room with everyone else</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id=\"seeing-it-in-code\">Seeing it in code</h2>\n<pre class=\"hljs\"><code class=\"language-javascript\"><span class=\"hljs-comment\">// O(1): one step, no matter how long the array is</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">first</span> = (<span class=\"hljs-params\">items</span>) =&gt; items[<span class=\"hljs-number\">0</span>];\n\n<span class=\"hljs-comment\">// O(n): looks at every item once</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">contains</span>(<span class=\"hljs-params\">items, target</span>) {\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> item <span class=\"hljs-keyword\">of</span> items) {\n    <span class=\"hljs-keyword\">if</span> (item === target) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n}\n\n<span class=\"hljs-comment\">// O(n²): compares every pair</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">hasDuplicate</span>(<span class=\"hljs-params\">items</span>) {\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; items.<span class=\"hljs-property\">length</span>; i++) {\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> j = i + <span class=\"hljs-number\">1</span>; j &lt; items.<span class=\"hljs-property\">length</span>; j++) {\n      <span class=\"hljs-keyword\">if</span> (items[i] === items[j]) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n}\n</code></pre>\n<p>The quadratic version makes <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mi>n</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{n(n-1)}{2}</annotation></semantics></math></span> comparisons. For 1,000 items that is about half a million; for 1,000,000 items, half a <em>trillion</em>.</p>\n<h2 id=\"the-fix-is-often-a-better-data-structure\">The fix is often a better data structure</h2>\n<pre class=\"hljs\"><code class=\"language-javascript\"><span class=\"hljs-comment\">// O(n): a Set remembers what we&#x27;ve seen</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">hasDuplicateFast</span>(<span class=\"hljs-params\">items</span>) {\n  <span class=\"hljs-keyword\">const</span> seen = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Set</span>();\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> item <span class=\"hljs-keyword\">of</span> items) {\n    <span class=\"hljs-keyword\">if</span> (seen.<span class=\"hljs-title function_\">has</span>(item)) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n    seen.<span class=\"hljs-title function_\">add</span>(item);\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n}\n</code></pre>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>When code feels slow, look for a loop inside a loop. A <code>Set</code> or a <code>Map</code> can often turn <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n^2)</annotation></semantics></math></span> into <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n)</annotation></semantics></math></span>.</p>\n</blockquote>\n<h2 id=\"why-logarithms-are-magic\">Why logarithms are magic</h2>\n<p>Binary search halves the remaining data at every step, so a sorted list of a billion items takes at most about 30 steps, because <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>30</mn></msup><mo>≈</mo><mn>1.07</mn><mo>×</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{30} \\approx 1.07 \\times 10^9</annotation></semantics></math></span>.</p>\n",
+   "body_md": "\n**Big-O notation** describes how the work an algorithm does grows as its input grows. It ignores the details and asks one question: *if the data gets ten times bigger, how much slower does this get?*\n\n<!-- more -->\n\n## The common growth rates\n\n| Big-O | Name | Everyday example |\n|---|---|---|\n| $O(1)$ | constant | Looking up a word by page number |\n| $O(\\log n)$ | logarithmic | Finding a name in a phone book by halving |\n| $O(n)$ | linear | Reading every page of a book |\n| $O(n \\log n)$ | linearithmic | Sorting a deck of cards efficiently |\n| $O(n^2)$ | quadratic | Comparing every person in a room with everyone else |\n\n## Seeing it in code\n\n```javascript\n// O(1): one step, no matter how long the array is\nconst first = (items) => items[0];\n\n// O(n): looks at every item once\nfunction contains(items, target) {\n  for (const item of items) {\n    if (item === target) return true;\n  }\n  return false;\n}\n\n// O(n²): compares every pair\nfunction hasDuplicate(items) {\n  for (let i = 0; i < items.length; i++) {\n    for (let j = i + 1; j < items.length; j++) {\n      if (items[i] === items[j]) return true;\n    }\n  }\n  return false;\n}\n```\n\nThe quadratic version makes $\\frac{n(n-1)}{2}$ comparisons. For 1,000 items that is about half a million; for 1,000,000 items, half a *trillion*.\n\n## The fix is often a better data structure\n\n```javascript\n// O(n): a Set remembers what we've seen\nfunction hasDuplicateFast(items) {\n  const seen = new Set();\n  for (const item of items) {\n    if (seen.has(item)) return true;\n    seen.add(item);\n  }\n  return false;\n}\n```\n\n> [!TIP]\n> When code feels slow, look for a loop inside a loop. A `Set` or a `Map` can often turn $O(n^2)$ into $O(n)$.\n\n## Why logarithms are magic\n\nBinary search halves the remaining data at every step, so a sorted list of a billion items takes at most about 30 steps, because $2^{30} \\approx 1.07 \\times 10^9$.\n"
+  },
+  {
+   "id": "f5ec6605-5c41-53c7-a013-b1cdfffdf51f",
+   "slug": "git-undo-almost-anything",
+   "title": "Git: Undo (Almost) Anything",
+   "summary": "The six commands that rescue you from the most common Git mistakes.",
+   "kind": "tip",
+   "category_id": "736cec39-6626-53b2-86cd-b9dc2721f802",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "git",
+    "cheat sheet"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-11-03T09:00:00.000Z",
+   "preview_html": "<p>Made a mess in Git? Find your situation below.</p>\n",
+   "headings": [],
+   "created_at": "2026-11-03T09:00:00.000Z",
+   "updated_at": "2026-11-03T09:00:00.000Z",
+   "body_html": "<p>Made a mess in Git? Find your situation below.</p>\n<!-- more -->\n<p><strong>Discard changes to a file you haven’t staged</strong></p>\n<pre class=\"hljs\"><code class=\"language-bash\">git restore path/to/file\n</code></pre>\n<p><strong>Unstage a file (keep the changes)</strong></p>\n<pre class=\"hljs\"><code class=\"language-bash\">git restore --staged path/to/file\n</code></pre>\n<p><strong>Fix the last commit message, or add a forgotten file</strong></p>\n<pre class=\"hljs\"><code class=\"language-bash\">git add forgotten-file\ngit commit --amend\n</code></pre>\n<p><strong>Undo the last commit but keep its changes</strong></p>\n<pre class=\"hljs\"><code class=\"language-bash\">git reset --soft HEAD~1\n</code></pre>\n<p><strong>Undo a commit that is already pushed</strong> (creates a new commit that reverses it)</p>\n<pre class=\"hljs\"><code class=\"language-bash\">git revert &lt;commit-sha&gt;\n</code></pre>\n<p><strong>Recover “lost” work</strong></p>\n<pre class=\"hljs\"><code class=\"language-bash\">git reflog          <span class=\"hljs-comment\"># find the commit you were on</span>\ngit switch -c rescue &lt;sha&gt;\n</code></pre>\n<blockquote class=\"callout callout-warning\">\n<p class=\"callout-title\">Warning</p>\n<p>Never <code>reset</code> or <code>--amend</code> commits you have already pushed to a shared branch — use <code>revert</code> instead.</p>\n</blockquote>\n",
+   "body_md": "\nMade a mess in Git? Find your situation below.\n\n<!-- more -->\n\n**Discard changes to a file you haven't staged**\n\n```bash\ngit restore path/to/file\n```\n\n**Unstage a file (keep the changes)**\n\n```bash\ngit restore --staged path/to/file\n```\n\n**Fix the last commit message, or add a forgotten file**\n\n```bash\ngit add forgotten-file\ngit commit --amend\n```\n\n**Undo the last commit but keep its changes**\n\n```bash\ngit reset --soft HEAD~1\n```\n\n**Undo a commit that is already pushed** (creates a new commit that reverses it)\n\n```bash\ngit revert <commit-sha>\n```\n\n**Recover \"lost\" work**\n\n```bash\ngit reflog          # find the commit you were on\ngit switch -c rescue <sha>\n```\n\n> [!WARNING]\n> Never `reset` or `--amend` commits you have already pushed to a shared branch — use `revert` instead.\n"
+  },
+  {
+   "id": "278e2388-4c2e-5bc6-b056-d90b7d1f3772",
+   "slug": "rest-api-with-node-and-typescript",
+   "title": "Build a REST API with Node.js and TypeScript",
+   "summary": "Design, build and test a small JSON API for a to-do app — routes, validation and error handling included.",
+   "kind": "tutorial",
+   "category_id": "736cec39-6626-53b2-86cd-b9dc2721f802",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "typescript",
+    "node",
+    "backend",
+    "api"
+   ],
+   "access": "premium",
+   "price_credits": null,
+   "reading_minutes": 2,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-11-01T21:00:00.000Z",
+   "preview_html": "<p>In this tutorial you will build a small but real JSON API for a to-do list using Node.js, Express and TypeScript, and learn the conventions that make APIs pleasant to use.</p>\n",
+   "headings": [
+    {
+     "id": "1-set-up-the-project",
+     "text": "1. Set up the project",
+     "level": 2
+    },
+    {
+     "id": "2-design-the-routes-first",
+     "text": "2. Design the routes first",
+     "level": 2
+    },
+    {
+     "id": "3-write-the-server",
+     "text": "3. Write the server",
+     "level": 2
+    },
+    {
+     "id": "4-try-it",
+     "text": "4. Try it",
+     "level": 2
+    },
+    {
+     "id": "5-status-codes-that-matter",
+     "text": "5. Status codes that matter",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-11-01T21:00:00.000Z",
+   "updated_at": "2026-11-01T21:00:00.000Z",
+   "body_html": "<p>In this tutorial you will build a small but real JSON API for a to-do list using Node.js, Express and TypeScript, and learn the conventions that make APIs pleasant to use.</p>\n<!-- more -->\n<h2 id=\"1-set-up-the-project\">1. Set up the project</h2>\n<pre class=\"hljs\"><code class=\"language-bash\"><span class=\"hljs-built_in\">mkdir</span> todo-api &amp;&amp; <span class=\"hljs-built_in\">cd</span> todo-api\nnpm init -y\nnpm install express\nnpm install -D typescript tsx @types/express @types/node\nnpx tsc --init\n</code></pre>\n<h2 id=\"2-design-the-routes-first\">2. Design the routes first</h2>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Method</th>\n<th>Path</th>\n<th>Meaning</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET</td>\n<td>/todos</td>\n<td>List all to-dos</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>/todos</td>\n<td>Create a to-do</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>/todos/:id</td>\n<td>Update a to-do</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>/todos/:id</td>\n<td>Delete a to-do</td>\n</tr>\n</tbody>\n</table></div>\n<p>Nouns in the path, verbs in the HTTP method — that is the heart of REST.</p>\n<h2 id=\"3-write-the-server\">3. Write the server</h2>\n<pre class=\"hljs\"><code class=\"language-typescript\"><span class=\"hljs-keyword\">import</span> express, { <span class=\"hljs-keyword\">type</span> <span class=\"hljs-title class_\">Request</span>, <span class=\"hljs-keyword\">type</span> <span class=\"hljs-title class_\">Response</span> } <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">&#x27;express&#x27;</span>;\n\n<span class=\"hljs-keyword\">interface</span> <span class=\"hljs-title class_\">Todo</span> {\n  <span class=\"hljs-attr\">id</span>: <span class=\"hljs-built_in\">number</span>;\n  <span class=\"hljs-attr\">title</span>: <span class=\"hljs-built_in\">string</span>;\n  <span class=\"hljs-attr\">done</span>: <span class=\"hljs-built_in\">boolean</span>;\n}\n\n<span class=\"hljs-keyword\">const</span> app = <span class=\"hljs-title function_\">express</span>();\napp.<span class=\"hljs-title function_\">use</span>(express.<span class=\"hljs-title function_\">json</span>());\n\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">todos</span>: <span class=\"hljs-title class_\">Todo</span>[] = [];\n<span class=\"hljs-keyword\">let</span> nextId = <span class=\"hljs-number\">1</span>;\n\napp.<span class=\"hljs-title function_\">get</span>(<span class=\"hljs-string\">&#x27;/todos&#x27;</span>, <span class=\"hljs-function\">(<span class=\"hljs-params\"><span class=\"hljs-attr\">_req</span>: <span class=\"hljs-title class_\">Request</span>, <span class=\"hljs-attr\">res</span>: <span class=\"hljs-title class_\">Response</span></span>) =&gt;</span> {\n  res.<span class=\"hljs-title function_\">json</span>(todos);\n});\n\napp.<span class=\"hljs-title function_\">post</span>(<span class=\"hljs-string\">&#x27;/todos&#x27;</span>, <span class=\"hljs-function\">(<span class=\"hljs-params\"><span class=\"hljs-attr\">req</span>: <span class=\"hljs-title class_\">Request</span>, <span class=\"hljs-attr\">res</span>: <span class=\"hljs-title class_\">Response</span></span>) =&gt;</span> {\n  <span class=\"hljs-keyword\">const</span> title = <span class=\"hljs-title class_\">String</span>(req.<span class=\"hljs-property\">body</span>?.<span class=\"hljs-property\">title</span> ?? <span class=\"hljs-string\">&#x27;&#x27;</span>).<span class=\"hljs-title function_\">trim</span>();\n  <span class=\"hljs-keyword\">if</span> (!title) {\n    res.<span class=\"hljs-title function_\">status</span>(<span class=\"hljs-number\">400</span>).<span class=\"hljs-title function_\">json</span>({ <span class=\"hljs-attr\">error</span>: <span class=\"hljs-string\">&#x27;title is required&#x27;</span> });\n    <span class=\"hljs-keyword\">return</span>;\n  }\n  <span class=\"hljs-keyword\">const</span> <span class=\"hljs-attr\">todo</span>: <span class=\"hljs-title class_\">Todo</span> = { <span class=\"hljs-attr\">id</span>: nextId++, title, <span class=\"hljs-attr\">done</span>: <span class=\"hljs-literal\">false</span> };\n  todos.<span class=\"hljs-title function_\">push</span>(todo);\n  res.<span class=\"hljs-title function_\">status</span>(<span class=\"hljs-number\">201</span>).<span class=\"hljs-title function_\">json</span>(todo);\n});\n\napp.<span class=\"hljs-title function_\">patch</span>(<span class=\"hljs-string\">&#x27;/todos/:id&#x27;</span>, <span class=\"hljs-function\">(<span class=\"hljs-params\"><span class=\"hljs-attr\">req</span>: <span class=\"hljs-title class_\">Request</span>, <span class=\"hljs-attr\">res</span>: <span class=\"hljs-title class_\">Response</span></span>) =&gt;</span> {\n  <span class=\"hljs-keyword\">const</span> todo = todos.<span class=\"hljs-title function_\">find</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">t</span>) =&gt;</span> t.<span class=\"hljs-property\">id</span> === <span class=\"hljs-title class_\">Number</span>(req.<span class=\"hljs-property\">params</span>.<span class=\"hljs-property\">id</span>));\n  <span class=\"hljs-keyword\">if</span> (!todo) {\n    res.<span class=\"hljs-title function_\">status</span>(<span class=\"hljs-number\">404</span>).<span class=\"hljs-title function_\">json</span>({ <span class=\"hljs-attr\">error</span>: <span class=\"hljs-string\">&#x27;not found&#x27;</span> });\n    <span class=\"hljs-keyword\">return</span>;\n  }\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> req.<span class=\"hljs-property\">body</span>?.<span class=\"hljs-property\">done</span> === <span class=\"hljs-string\">&#x27;boolean&#x27;</span>) todo.<span class=\"hljs-property\">done</span> = req.<span class=\"hljs-property\">body</span>.<span class=\"hljs-property\">done</span>;\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> req.<span class=\"hljs-property\">body</span>?.<span class=\"hljs-property\">title</span> === <span class=\"hljs-string\">&#x27;string&#x27;</span>) todo.<span class=\"hljs-property\">title</span> = req.<span class=\"hljs-property\">body</span>.<span class=\"hljs-property\">title</span>.<span class=\"hljs-title function_\">trim</span>();\n  res.<span class=\"hljs-title function_\">json</span>(todo);\n});\n\napp.<span class=\"hljs-title function_\">delete</span>(<span class=\"hljs-string\">&#x27;/todos/:id&#x27;</span>, <span class=\"hljs-function\">(<span class=\"hljs-params\"><span class=\"hljs-attr\">req</span>: <span class=\"hljs-title class_\">Request</span>, <span class=\"hljs-attr\">res</span>: <span class=\"hljs-title class_\">Response</span></span>) =&gt;</span> {\n  <span class=\"hljs-keyword\">const</span> before = todos.<span class=\"hljs-property\">length</span>;\n  todos = todos.<span class=\"hljs-title function_\">filter</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">t</span>) =&gt;</span> t.<span class=\"hljs-property\">id</span> !== <span class=\"hljs-title class_\">Number</span>(req.<span class=\"hljs-property\">params</span>.<span class=\"hljs-property\">id</span>));\n  res.<span class=\"hljs-title function_\">status</span>(todos.<span class=\"hljs-property\">length</span> &lt; before ? <span class=\"hljs-number\">204</span> : <span class=\"hljs-number\">404</span>).<span class=\"hljs-title function_\">end</span>();\n});\n\napp.<span class=\"hljs-title function_\">listen</span>(<span class=\"hljs-number\">3000</span>, <span class=\"hljs-function\">() =&gt;</span> <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-string\">&#x27;API running on http://localhost:3000&#x27;</span>));\n</code></pre>\n<p>Run it with <code>npx tsx server.ts</code>.</p>\n<h2 id=\"4-try-it\">4. Try it</h2>\n<pre class=\"hljs\"><code class=\"language-bash\">curl -X POST localhost:3000/todos -H <span class=\"hljs-string\">&#x27;Content-Type: application/json&#x27;</span> -d <span class=\"hljs-string\">&#x27;{&quot;title&quot;:&quot;Learn REST&quot;}&#x27;</span>\ncurl localhost:3000/todos\ncurl -X PATCH localhost:3000/todos/1 -H <span class=\"hljs-string\">&#x27;Content-Type: application/json&#x27;</span> -d <span class=\"hljs-string\">&#x27;{&quot;done&quot;:true}&#x27;</span>\n</code></pre>\n<h2 id=\"5-status-codes-that-matter\">5. Status codes that matter</h2>\n<ul>\n<li><strong>200</strong> OK — here is what you asked for</li>\n<li><strong>201</strong> Created — returned after a successful <code>POST</code></li>\n<li><strong>204</strong> No Content — success with nothing to return (deletes)</li>\n<li><strong>400</strong> Bad Request — the client sent invalid data</li>\n<li><strong>404</strong> Not Found — no such resource</li>\n</ul>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Next, swap the in-memory array for a real database and add automated tests — the routes won’t need to change at all.</p>\n</blockquote>\n",
+   "body_md": "\nIn this tutorial you will build a small but real JSON API for a to-do list using Node.js, Express and TypeScript, and learn the conventions that make APIs pleasant to use.\n\n<!-- more -->\n\n## 1. Set up the project\n\n```bash\nmkdir todo-api && cd todo-api\nnpm init -y\nnpm install express\nnpm install -D typescript tsx @types/express @types/node\nnpx tsc --init\n```\n\n## 2. Design the routes first\n\n| Method | Path | Meaning |\n|---|---|---|\n| GET | /todos | List all to-dos |\n| POST | /todos | Create a to-do |\n| PATCH | /todos/:id | Update a to-do |\n| DELETE | /todos/:id | Delete a to-do |\n\nNouns in the path, verbs in the HTTP method — that is the heart of REST.\n\n## 3. Write the server\n\n```typescript\nimport express, { type Request, type Response } from 'express';\n\ninterface Todo {\n  id: number;\n  title: string;\n  done: boolean;\n}\n\nconst app = express();\napp.use(express.json());\n\nlet todos: Todo[] = [];\nlet nextId = 1;\n\napp.get('/todos', (_req: Request, res: Response) => {\n  res.json(todos);\n});\n\napp.post('/todos', (req: Request, res: Response) => {\n  const title = String(req.body?.title ?? '').trim();\n  if (!title) {\n    res.status(400).json({ error: 'title is required' });\n    return;\n  }\n  const todo: Todo = { id: nextId++, title, done: false };\n  todos.push(todo);\n  res.status(201).json(todo);\n});\n\napp.patch('/todos/:id', (req: Request, res: Response) => {\n  const todo = todos.find((t) => t.id === Number(req.params.id));\n  if (!todo) {\n    res.status(404).json({ error: 'not found' });\n    return;\n  }\n  if (typeof req.body?.done === 'boolean') todo.done = req.body.done;\n  if (typeof req.body?.title === 'string') todo.title = req.body.title.trim();\n  res.json(todo);\n});\n\napp.delete('/todos/:id', (req: Request, res: Response) => {\n  const before = todos.length;\n  todos = todos.filter((t) => t.id !== Number(req.params.id));\n  res.status(todos.length < before ? 204 : 404).end();\n});\n\napp.listen(3000, () => console.log('API running on http://localhost:3000'));\n```\n\nRun it with `npx tsx server.ts`.\n\n## 4. Try it\n\n```bash\ncurl -X POST localhost:3000/todos -H 'Content-Type: application/json' -d '{\"title\":\"Learn REST\"}'\ncurl localhost:3000/todos\ncurl -X PATCH localhost:3000/todos/1 -H 'Content-Type: application/json' -d '{\"done\":true}'\n```\n\n## 5. Status codes that matter\n\n- **200** OK — here is what you asked for\n- **201** Created — returned after a successful `POST`\n- **204** No Content — success with nothing to return (deletes)\n- **400** Bad Request — the client sent invalid data\n- **404** Not Found — no such resource\n\n> [!TIP]\n> Next, swap the in-memory array for a real database and add automated tests — the routes won't need to change at all.\n"
+  },
+  {
+   "id": "31764008-300a-516c-b32f-394e852e0342",
+   "slug": "why-is-the-sky-blue",
+   "title": "Why Is the Sky Blue?",
+   "summary": "Sunlight, tiny air molecules and one surprisingly steep formula explain blue skies and red sunsets.",
+   "kind": "article",
+   "category_id": "ee0a1bf7-7752-52e0-ba07-cd7ffbb2ff79",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "physics",
+    "light",
+    "atmosphere"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-10-31T09:00:00.000Z",
+   "preview_html": "<p>Sunlight looks white, but it is a mix of every colour of the rainbow. On its way through the atmosphere it bumps into nitrogen and oxygen molecules that are far smaller than the wavelength of light — and that is where the blue comes from.</p>\n",
+   "headings": [
+    {
+     "id": "rayleigh-scattering",
+     "text": "Rayleigh scattering",
+     "level": 2
+    },
+    {
+     "id": "then-why-isn-t-the-sky-violet",
+     "text": "Then why isn’t the sky violet?",
+     "level": 2
+    },
+    {
+     "id": "red-sunsets",
+     "text": "Red sunsets",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-10-31T09:00:00.000Z",
+   "updated_at": "2026-10-31T09:00:00.000Z",
+   "body_html": "<p>Sunlight looks white, but it is a mix of every colour of the rainbow. On its way through the atmosphere it bumps into nitrogen and oxygen molecules that are far smaller than the wavelength of light — and that is where the blue comes from.</p>\n<!-- more -->\n<h2 id=\"rayleigh-scattering\">Rayleigh scattering</h2>\n<p>Small particles scatter short wavelengths much more strongly than long ones. The amount of scattering is proportional to one over the wavelength to the fourth power:</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>I</mi><mo>∝</mo><mfrac><mn>1</mn><msup><mi>λ</mi><mn>4</mn></msup></mfrac></mrow><annotation encoding=\"application/x-tex\">I \\propto \\frac{1}{\\lambda^4}</annotation></semantics></math></span></div>\n<p>Blue light (about 450 nm) versus red light (about 700 nm):</p>\n<div class=\"math-display\"><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mrow><mo fence=\"true\">(</mo><mfrac><mn>700</mn><mn>450</mn></mfrac><mo fence=\"true\">)</mo></mrow><mn>4</mn></msup><mo>≈</mo><mn>5.9</mn></mrow><annotation encoding=\"application/x-tex\">\\left(\\frac{700}{450}\\right)^4 \\approx 5.9</annotation></semantics></math></span></div>\n<p>So blue light is scattered roughly six times more than red. Wherever you look in the sky, scattered blue light is coming towards you.</p>\n<h2 id=\"then-why-isn-t-the-sky-violet\">Then why isn’t the sky violet?</h2>\n<p>Violet light has an even shorter wavelength, but:</p>\n<ul>\n<li>the Sun emits less violet than blue,</li>\n<li>some violet is absorbed high in the atmosphere, and</li>\n<li>our eyes are much more sensitive to blue.</li>\n</ul>\n<h2 id=\"red-sunsets\">Red sunsets</h2>\n<p>At sunset, light travels through far more air to reach you. Most of the blue is scattered away along the path, leaving the oranges and reds.</p>\n<blockquote class=\"callout callout-note\">\n<p class=\"callout-title\">Note</p>\n<p>On Mars the effect is reversed: fine dust makes the daytime sky butterscotch and sunsets bluish.</p>\n</blockquote>\n",
+   "body_md": "\nSunlight looks white, but it is a mix of every colour of the rainbow. On its way through the atmosphere it bumps into nitrogen and oxygen molecules that are far smaller than the wavelength of light — and that is where the blue comes from.\n\n<!-- more -->\n\n## Rayleigh scattering\n\nSmall particles scatter short wavelengths much more strongly than long ones. The amount of scattering is proportional to one over the wavelength to the fourth power:\n\n$$\nI \\propto \\frac{1}{\\lambda^4}\n$$\n\nBlue light (about 450 nm) versus red light (about 700 nm):\n\n$$\n\\left(\\frac{700}{450}\\right)^4 \\approx 5.9\n$$\n\nSo blue light is scattered roughly six times more than red. Wherever you look in the sky, scattered blue light is coming towards you.\n\n## Then why isn't the sky violet?\n\nViolet light has an even shorter wavelength, but:\n\n- the Sun emits less violet than blue,\n- some violet is absorbed high in the atmosphere, and\n- our eyes are much more sensitive to blue.\n\n## Red sunsets\n\nAt sunset, light travels through far more air to reach you. Most of the blue is scattered away along the path, leaving the oranges and reds.\n\n> [!NOTE]\n> On Mars the effect is reversed: fine dust makes the daytime sky butterscotch and sunsets bluish.\n"
+  },
+  {
+   "id": "0519b938-ad9a-51ce-809d-d1c15f2c7689",
+   "slug": "spaced-repetition-vocabulary",
+   "title": "Spaced Repetition: Remember New Words for Good",
+   "summary": "Review words just before you forget them and you'll need a fraction of the study time.",
+   "kind": "article",
+   "category_id": "b6e4b71f-deb3-572d-b604-489dd6d4192b",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "memory",
+    "vocabulary",
+    "study skills"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-10-29T21:00:00.000Z",
+   "preview_html": "<p>In the 1880s Hermann Ebbinghaus showed that we forget new information on a predictable curve — fast at first, then more slowly. Each time you successfully recall something, the curve flattens and you remember it for longer.</p>\n",
+   "headings": [
+    {
+     "id": "the-idea",
+     "text": "The idea",
+     "level": 2
+    },
+    {
+     "id": "the-leitner-box-no-app-needed",
+     "text": "The Leitner box (no app needed)",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-10-29T21:00:00.000Z",
+   "updated_at": "2026-10-29T21:00:00.000Z",
+   "body_html": "<p>In the 1880s Hermann Ebbinghaus showed that we forget new information on a predictable curve — fast at first, then more slowly. Each time you successfully recall something, the curve flattens and you remember it for longer.</p>\n<!-- more -->\n<h2 id=\"the-idea\">The idea</h2>\n<p>Instead of cramming a word ten times today, review it a few times <strong>spread out</strong>, each gap longer than the last.</p>\n<div class=\"table-wrap\"><table>\n<thead>\n<tr>\n<th>Review</th>\n<th>When</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Same day</td>\n</tr>\n<tr>\n<td>2</td>\n<td>1 day later</td>\n</tr>\n<tr>\n<td>3</td>\n<td>3 days later</td>\n</tr>\n<tr>\n<td>4</td>\n<td>1 week later</td>\n</tr>\n<tr>\n<td>5</td>\n<td>2 weeks later</td>\n</tr>\n<tr>\n<td>6</td>\n<td>1 month later</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id=\"the-leitner-box-no-app-needed\">The Leitner box (no app needed)</h2>\n<ol>\n<li>Write each word on a card and put new cards in <strong>Box 1</strong>.</li>\n<li>Review Box 1 daily, Box 2 every 3 days, Box 3 weekly.</li>\n<li>Remember the word? Move the card <strong>up</strong> a box.</li>\n<li>Forget it? It goes <strong>back to Box 1</strong>.</li>\n</ol>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>Put the word in a sentence on the back of the card. Words learned in context stick far better than isolated translations.</p>\n</blockquote>\n<p>Ten minutes a day of spaced review beats an hour of cramming once a week.</p>\n",
+   "body_md": "\nIn the 1880s Hermann Ebbinghaus showed that we forget new information on a predictable curve — fast at first, then more slowly. Each time you successfully recall something, the curve flattens and you remember it for longer.\n\n<!-- more -->\n\n## The idea\n\nInstead of cramming a word ten times today, review it a few times **spread out**, each gap longer than the last.\n\n| Review | When |\n|---|---|\n| 1 | Same day |\n| 2 | 1 day later |\n| 3 | 3 days later |\n| 4 | 1 week later |\n| 5 | 2 weeks later |\n| 6 | 1 month later |\n\n## The Leitner box (no app needed)\n\n1. Write each word on a card and put new cards in **Box 1**.\n2. Review Box 1 daily, Box 2 every 3 days, Box 3 weekly.\n3. Remember the word? Move the card **up** a box.\n4. Forget it? It goes **back to Box 1**.\n\n> [!TIP]\n> Put the word in a sentence on the back of the card. Words learned in context stick far better than isolated translations.\n\nTen minutes a day of spaced review beats an hour of cramming once a week.\n"
+  },
+  {
+   "id": "f909df79-e056-55fb-a864-45fd71596c75",
+   "slug": "pomodoro-technique-done-right",
+   "title": "The Pomodoro Technique, Done Right",
+   "summary": "Twenty-five minutes of focus, five minutes of rest — plus the details most people skip.",
+   "kind": "tip",
+   "category_id": "93122706-1a9e-5262-8fe9-5450fed8b7d5",
+   "cover_url": null,
+   "author": "Polymath Team",
+   "tags": [
+    "focus",
+    "study skills",
+    "time management"
+   ],
+   "access": "free",
+   "price_credits": null,
+   "reading_minutes": 1,
+   "is_featured": false,
+   "status": "published",
+   "published_at": "2026-10-28T09:00:00.000Z",
+   "preview_html": "<p>The Pomodoro Technique, created by Francesco Cirillo in the late 1980s, breaks work into short, focused intervals separated by breaks.</p>\n",
+   "headings": [
+    {
+     "id": "the-basic-cycle",
+     "text": "The basic cycle",
+     "level": 2
+    },
+    {
+     "id": "the-details-that-make-it-work",
+     "text": "The details that make it work",
+     "level": 2
+    }
+   ],
+   "created_at": "2026-10-28T09:00:00.000Z",
+   "updated_at": "2026-10-28T09:00:00.000Z",
+   "body_html": "<p>The Pomodoro Technique, created by Francesco Cirillo in the late 1980s, breaks work into short, focused intervals separated by breaks.</p>\n<!-- more -->\n<h2 id=\"the-basic-cycle\">The basic cycle</h2>\n<ol>\n<li>Pick <strong>one</strong> task.</li>\n<li>Set a timer for <strong>25 minutes</strong> and work on nothing else.</li>\n<li>Take a <strong>5-minute</strong> break — stand up, stretch, look away from screens.</li>\n<li>After four rounds, take a longer <strong>15–30 minute</strong> break.</li>\n</ol>\n<h2 id=\"the-details-that-make-it-work\">The details that make it work</h2>\n<ul>\n<li><strong>Write distractions down</strong> instead of acting on them. Deal with the list during breaks.</li>\n<li><strong>Plan your pomodoros</strong> at the start of the day; estimating builds a sense of how long things really take.</li>\n<li><strong>Protect the break.</strong> Scrolling your phone is not rest.</li>\n</ul>\n<blockquote class=\"callout callout-tip\">\n<p class=\"callout-title\">Tip</p>\n<p>If 25 minutes feels too short for deep work like coding or composing, try 50/10. The principle — focused sprints with real breaks — matters more than the exact numbers.</p>\n</blockquote>\n",
+   "body_md": "\nThe Pomodoro Technique, created by Francesco Cirillo in the late 1980s, breaks work into short, focused intervals separated by breaks.\n\n<!-- more -->\n\n## The basic cycle\n\n1. Pick **one** task.\n2. Set a timer for **25 minutes** and work on nothing else.\n3. Take a **5-minute** break — stand up, stretch, look away from screens.\n4. After four rounds, take a longer **15–30 minute** break.\n\n## The details that make it work\n\n- **Write distractions down** instead of acting on them. Deal with the list during breaks.\n- **Plan your pomodoros** at the start of the day; estimating builds a sense of how long things really take.\n- **Protect the break.** Scrolling your phone is not rest.\n\n> [!TIP]\n> If 25 minutes feels too short for deep work like coding or composing, try 50/10. The principle — focused sprints with real breaks — matters more than the exact numbers.\n"
+  }
+ ],
+ "config": {
+  "ads": {
+   "gate": "rewarded",
+   "unlock_hours": 24,
+   "banners": true
+  },
+  "paywall": {
+   "headline": "Unlock the whole library",
+   "subheadline": "Every ebook, tutorial and tip — no ads, new lessons every week.",
+   "benefits": [
+    "All premium ebooks and tutorials",
+    "No ads, ever",
+    "Offline reading",
+    "New math, music & programming lessons weekly"
+   ]
+  },
+  "pricing": {
+   "credit_packs": [
+    {
+     "id": "credits_10",
+     "credits": 10,
+     "fallback_price": "$1.99"
+    },
+    {
+     "id": "credits_30",
+     "credits": 30,
+     "fallback_price": "$4.99",
+     "badge": "Popular"
+    },
+    {
+     "id": "credits_70",
+     "credits": 70,
+     "fallback_price": "$9.99",
+     "badge": "Best value"
+    }
+   ]
+  },
+  "links": {
+   "privacy": "https://example.com/privacy",
+   "terms": "https://example.com/terms",
+   "support": "mailto:support@example.com"
+  }
+ }
+}

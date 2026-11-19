@@ -1,0 +1,12 @@
+{
+  "name": "polymath-db-tests",
+  "private": true,
+  "type": "module",
+  "description": "Runs the Supabase migrations + seed in PGlite (Postgres compiled to WASM) and checks the access rules.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.17"
+  }
+}

@@ -1,0 +1,205 @@
+name: iOS build (IPA)
+
+# Builds the iPhone/iPad app on a macOS runner.
+#  - Always: an UNSIGNED .ipa (sideload with AltStore / Sideloadly, or re-sign).
+#  - With the IOS_* signing secrets: a signed App Store .ipa, optionally uploaded to TestFlight.
+# See docs/SETUP.md → "Build & sign on GitHub".
+
+on:
+  push:
+    branches: [main, 'claude/**']
+    tags: ['v*']
+    paths:
+      - 'apps/mobile/**'
+      - 'shared/**'
+      - '.github/workflows/ios.yml'
+  workflow_dispatch:
+    inputs:
+      testflight:
+        description: Upload the signed build to TestFlight (needs signing + App Store Connect API secrets)
+        type: boolean
+        default: false
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  ipa:
+    name: Build IPA
+    runs-on: macos-26
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: apps/mobile
+    env:
+      APP_NAME: ${{ vars.APP_NAME || 'Polymath' }}
+      APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.rvmendillo.polymath' }}
+      APP_VERSION: ${{ vars.APP_VERSION || '1.0.0' }}
+      APP_BUILD_NUMBER: ${{ github.run_number }}
+      ADMOB_IOS_APP_ID: ${{ secrets.ADMOB_IOS_APP_ID }}
+      ADMOB_ANDROID_APP_ID: ${{ secrets.ADMOB_ANDROID_APP_ID }}
+      HAS_SIGNING: ${{ secrets.IOS_DIST_CERT_P12_BASE64 != '' && secrets.IOS_PROVISIONING_PROFILE_BASE64 != '' && secrets.IOS_TEAM_ID != '' }}
+      HAS_ASC_KEY: ${{ secrets.APP_STORE_CONNECT_KEY_ID != '' && secrets.APP_STORE_CONNECT_ISSUER_ID != '' && secrets.APP_STORE_CONNECT_KEY_P8 != '' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Write app environment (.env)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY || secrets.SUPABASE_PUBLISHABLE_KEY }}
+          RC_IOS: ${{ secrets.REVENUECAT_IOS_KEY }}
+          RC_ANDROID: ${{ secrets.REVENUECAT_ANDROID_KEY }}
+          AD_IOS_REWARDED: ${{ secrets.ADMOB_IOS_REWARDED }}
+          AD_IOS_INTERSTITIAL: ${{ secrets.ADMOB_IOS_INTERSTITIAL }}
+          AD_IOS_BANNER: ${{ secrets.ADMOB_IOS_BANNER }}
+        run: |
+          {
+            echo "EXPO_PUBLIC_SUPABASE_URL=$SUPABASE_URL"
+            echo "EXPO_PUBLIC_SUPABASE_KEY=$SUPABASE_KEY"
+            echo "EXPO_PUBLIC_REVENUECAT_IOS_KEY=$RC_IOS"
+            echo "EXPO_PUBLIC_REVENUECAT_ANDROID_KEY=$RC_ANDROID"
+            echo "EXPO_PUBLIC_ADMOB_IOS_REWARDED=$AD_IOS_REWARDED"
+            echo "EXPO_PUBLIC_ADMOB_IOS_INTERSTITIAL=$AD_IOS_INTERSTITIAL"
+            echo "EXPO_PUBLIC_ADMOB_IOS_BANNER=$AD_IOS_BANNER"
+          } > .env
+          echo "Mode: $([ -n "$SUPABASE_URL" ] && echo live library || echo sample library), $([ -n "$RC_IOS" ] && echo store purchases || echo simulated purchases)"
+
+      - name: Generate the native iOS project (Expo prebuild + CocoaPods)
+        run: npx expo prebuild --platform ios --clean
+        env:
+          CI: 1
+
+      - name: Import signing certificate and provisioning profile
+        if: env.HAS_SIGNING == 'true'
+        env:
+          P12_BASE64: ${{ secrets.IOS_DIST_CERT_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+          PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -hex 24)"
+          echo "$P12_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          echo "$PROFILE_BASE64" | base64 --decode > "$RUNNER_TEMP/profile.mobileprovision"
+          security cms -D -i "$RUNNER_TEMP/profile.mobileprovision" > "$RUNNER_TEMP/profile.plist"
+          UUID=$(/usr/libexec/PlistBuddy -c 'Print UUID' "$RUNNER_TEMP/profile.plist")
+          NAME=$(/usr/libexec/PlistBuddy -c 'Print Name' "$RUNNER_TEMP/profile.plist")
+          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+          cp "$RUNNER_TEMP/profile.mobileprovision" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+          echo "PROFILE_NAME=$NAME" >> "$GITHUB_ENV"
+          echo "Using provisioning profile: $NAME"
+
+      - name: Archive
+        env:
+          TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          set -o pipefail
+          WORKSPACE=$(ls -d ios/*.xcworkspace | head -1)
+          SCHEME=$(basename "$WORKSPACE" .xcworkspace)
+          echo "SCHEME=$SCHEME" >> "$GITHUB_ENV"
+          if [ "$HAS_SIGNING" = "true" ]; then
+            SIGNING=(CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="$TEAM_ID" CODE_SIGN_IDENTITY="Apple Distribution" PROVISIONING_PROFILE_SPECIFIER="$PROFILE_NAME")
+          else
+            SIGNING=(CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="")
+          fi
+          xcodebuild archive \
+            -workspace "$WORKSPACE" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/build/App.xcarchive" \
+            "${SIGNING[@]}" 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E --line-buffered '(error|warning: unable|BUILD|ARCHIVE|\*\*)' || true
+          test -d "$RUNNER_TEMP/build/App.xcarchive/Products/Applications" || (tail -n 200 "$RUNNER_TEMP/xcodebuild.log"; exit 1)
+
+      - name: Package unsigned IPA
+        if: env.HAS_SIGNING != 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/ipa/Payload" "$GITHUB_WORKSPACE/dist"
+          cp -R "$RUNNER_TEMP"/build/App.xcarchive/Products/Applications/*.app "$RUNNER_TEMP/ipa/Payload/"
+          cd "$RUNNER_TEMP/ipa" && zip -qry "$GITHUB_WORKSPACE/dist/${APP_NAME}-${APP_VERSION}-${APP_BUILD_NUMBER}-unsigned.ipa" Payload
+          ls -lh "$GITHUB_WORKSPACE/dist"
+
+      - name: Export signed IPA
+        if: env.HAS_SIGNING == 'true'
+        env:
+          TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>teamID</key><string>${TEAM_ID}</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>provisioningProfiles</key><dict><key>${APP_BUNDLE_ID}</key><string>${PROFILE_NAME}</string></dict>
+            <key>uploadSymbols</key><true/>
+          </dict></plist>
+          PLIST
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/build/App.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -exportPath "$RUNNER_TEMP/export"
+          mkdir -p "$GITHUB_WORKSPACE/dist"
+          cp "$RUNNER_TEMP"/export/*.ipa "$GITHUB_WORKSPACE/dist/${APP_NAME}-${APP_VERSION}-${APP_BUILD_NUMBER}.ipa"
+          ls -lh "$GITHUB_WORKSPACE/dist"
+
+      - name: Upload to TestFlight
+        if: env.HAS_SIGNING == 'true' && env.HAS_ASC_KEY == 'true' && (inputs.testflight || startsWith(github.ref, 'refs/tags/v'))
+        env:
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          KEY_P8: ${{ secrets.APP_STORE_CONNECT_KEY_P8 }}
+        run: |
+          mkdir -p "$HOME/.appstoreconnect/private_keys"
+          printf '%s' "$KEY_P8" > "$HOME/.appstoreconnect/private_keys/AuthKey_${KEY_ID}.p8"
+          xcrun altool --upload-app --type ios \
+            --file "$GITHUB_WORKSPACE/dist/${APP_NAME}-${APP_VERSION}-${APP_BUILD_NUMBER}.ipa" \
+            --apiKey "$KEY_ID" --apiIssuer "$ISSUER_ID"
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-ipa-${{ github.run_number }}
+          path: dist/*.ipa
+          if-no-files-found: error
+
+      - name: Upload build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-xcodebuild-log-${{ github.run_number }}
+          path: ${{ runner.temp }}/xcodebuild.log
+          if-no-files-found: ignore
+
+      - name: Attach to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v3
+        with:
+          files: dist/*.ipa
+
+      - name: Clean up keychain
+        if: always() && env.HAS_SIGNING == 'true'
+        run: security delete-keychain "$RUNNER_TEMP/signing.keychain-db" || true
