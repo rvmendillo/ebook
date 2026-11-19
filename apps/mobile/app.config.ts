@@ -96,7 +96,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     config: { usesNonExemptEncryption: false },
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
-      CFBundleDisplayName: APP_NAME,
     },
   },
   android: {

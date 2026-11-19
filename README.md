@@ -29,7 +29,7 @@ Every push builds the apps on GitHub:
 |---|---|---|
 | **iOS build (IPA)** | `Polymath-<version>-<build>-unsigned.ipa` — or a signed App Store IPA (+ TestFlight upload) when signing secrets are set | Actions → *iOS build (IPA)* → run → **Artifacts** |
 | **Android build (APK + AAB)** | Installable `.apk` and Play Store `.aab` | Actions → *Android build* → run → **Artifacts** |
-| **Admin web app** | The admin studio, deployed to GitHub Pages from `main` | `https://<you>.github.io/<repo>/` |
+| **Admin web app** | The admin studio, deployed to GitHub Pages from the default branch | `https://<you>.github.io/<repo>/` |
 
 Push a tag like `v1.0.0` and both mobile workflows attach their files to a **GitHub Release**.
 

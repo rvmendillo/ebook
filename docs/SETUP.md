@@ -23,7 +23,7 @@ All keys go into **GitHub → Settings → Secrets and variables → Actions**. 
    - open *SQL Editor*, paste [`supabase/migrations/20261119000000_polymath_init.sql`](../supabase/migrations/20261119000000_polymath_init.sql), run it, then optionally run [`supabase/seed.sql`](../supabase/seed.sql) for the 13-item starter library; **or**
    - add the secrets `SUPABASE_ACCESS_TOKEN` (Account → Access tokens), `SUPABASE_PROJECT_REF` and `SUPABASE_DB_PASSWORD`, then run **Actions → Deploy Supabase backend** (tick *load the starter library* if you want it).
 3. **Authentication → Sign In / Providers:** turn on **Allow anonymous sign-ins**. Every install gets a silent guest account that owns its purchases.
-4. **Authentication → Email Templates:** readers sync their library with a 6-digit code. Add `{{ .Token }}` to the **Magic Link** and **Change Email Address** templates, e.g. `Your Polymath code is {{ .Token }}`.
+4. **Authentication → Email Templates:** readers sync their library with a 6-digit code. Add `{{ .Token }}` to the **Change Email Address** (guest → email), **Magic Link** (returning reader) and **Confirm signup** (brand-new email) templates, e.g. `Your Polymath code is {{ .Token }}`. For real traffic, also configure a custom SMTP server (Authentication → Emails) — Supabase's built-in sender is rate-limited.
 5. **Make yourself an admin:** *Authentication → Users → Add user* (email + password, auto-confirm), then in the SQL editor:
    ```sql
    insert into public.admins (user_id)
@@ -35,7 +35,7 @@ The schema's row-level security means anyone can read the catalogue and free tex
 
 ## 2. Admin studio
 
-* **Hosted on GitHub Pages:** *Settings → Pages → Source: GitHub Actions*. The *Admin web app* workflow deploys on every push to `main`. If you set the `SUPABASE_*` variables it's pre-connected; otherwise open **Settings** in the admin and paste the URL + publishable key (saved in your browser).
+* **Hosted on GitHub Pages:** *Settings → Pages → Source: GitHub Actions*. The *Admin web app* workflow deploys on every push to the default branch. If you set the `SUPABASE_*` variables it's pre-connected; otherwise open **Settings** in the admin and paste the URL + publishable key (saved in your browser).
 * **Locally:** `cd apps/admin && npm install && npm run dev`.
 * Sign in with the admin user from step 1.5. Load the starter library from *Settings* if you skipped the seed.
 
