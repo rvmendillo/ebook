@@ -28,7 +28,12 @@ export function Cover({
   if (content.cover_url) {
     return (
       <View style={[styles.base, style]}>
-        <Image source={{ uri: content.cover_url }} style={StyleSheet.absoluteFill} contentFit="cover" transition={200} />
+        <Image
+          source={{ uri: content.cover_url }}
+          style={StyleSheet.absoluteFill}
+          contentFit="cover"
+          transition={200}
+        />
       </View>
     );
   }

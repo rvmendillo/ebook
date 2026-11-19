@@ -77,7 +77,9 @@ describe('gated bodies', () => {
       assert.equal((await rows(tx, 'select content_id from public.content_bodies')).length, 13);
       assert.equal((await rows(tx, 'select public.has_premium() as p'))[0].p, true);
     });
-    await db.query(`update public.subscriptions set expires_at = now() - interval '1 minute' where user_id = $1`, [BOB]);
+    await db.query(`update public.subscriptions set expires_at = now() - interval '1 minute' where user_id = $1`, [
+      BOB,
+    ]);
     await as('authenticated', BOB, async (tx) => {
       assert.equal((await rows(tx, 'select content_id from public.content_bodies')).length, 9);
     });
@@ -143,14 +145,21 @@ describe('credits (pay on demand)', () => {
   test('readers cannot mint credits, unlocks or subscriptions', async () => {
     const fifths = await contentId('circle-of-fifths-explained');
     const attempts = [
-      [`insert into public.credit_ledger (user_id, delta, kind) values ('${ALICE}', 100, 'grant')`, /row-level security/],
+      [
+        `insert into public.credit_ledger (user_id, delta, kind) values ('${ALICE}', 100, 'grant')`,
+        /row-level security/,
+      ],
       [`insert into public.unlocks (user_id, content_id) values ('${ALICE}', '${fifths}')`, /row-level security/],
       [`insert into public.subscriptions (user_id, is_active) values ('${ALICE}', true)`, /permission denied/],
       [`update public.contents set access = 'free' where slug = 'circle-of-fifths-explained'`, null],
     ];
     for (const [sql, err] of attempts) {
       if (err) {
-        await assert.rejects(as('authenticated', ALICE, (tx) => tx.query(sql)), err, sql);
+        await assert.rejects(
+          as('authenticated', ALICE, (tx) => tx.query(sql)),
+          err,
+          sql,
+        );
       } else {
         const res = await as('authenticated', ALICE, (tx) => tx.query(sql));
         assert.equal(res.affectedRows ?? 0, 0, 'non-admin updates must not touch rows');
@@ -173,21 +182,34 @@ describe('credits (pay on demand)', () => {
 describe('admin', () => {
   test('admins manage content and see stats; readers cannot', async () => {
     await as('authenticated', ADA, async (tx) => {
-      await tx.query(`insert into public.contents (slug, title, access, price_credits) values ('new-one', 'New', 'premium', 3)`);
-      await tx.query(`insert into public.credit_ledger (user_id, delta, kind, note) values ($1, 5, 'grant', 'welcome gift')`, [ALICE]);
+      await tx.query(
+        `insert into public.contents (slug, title, access, price_credits) values ('new-one', 'New', 'premium', 3)`,
+      );
+      await tx.query(
+        `insert into public.credit_ledger (user_id, delta, kind, note) values ($1, 5, 'grant', 'welcome gift')`,
+        [ALICE],
+      );
       const [{ s }] = await rows(tx, 'select public.admin_stats() as s');
       assert.equal(s.users, 3);
       assert.equal(s.credits_sold, 30);
       assert.equal(s.credits_spent, 30);
       assert.equal(s.unlocks, 2);
     });
-    await assert.rejects(as('authenticated', ALICE, (tx) => tx.query('select public.admin_stats()')), /admin only/);
-    await assert.rejects(as('anon', null, (tx) => tx.query('select public.admin_stats()')), /permission denied/);
+    await assert.rejects(
+      as('authenticated', ALICE, (tx) => tx.query('select public.admin_stats()')),
+      /admin only/,
+    );
+    await assert.rejects(
+      as('anon', null, (tx) => tx.query('select public.admin_stats()')),
+      /permission denied/,
+    );
   });
 
   test('price only allowed on premium items', async () => {
     await assert.rejects(
-      as('authenticated', ADA, (tx) => tx.query(`insert into public.contents (slug, title, access, price_credits) values ('bad', 'Bad', 'free', 3)`)),
+      as('authenticated', ADA, (tx) =>
+        tx.query(`insert into public.contents (slug, title, access, price_credits) values ('bad', 'Bad', 'free', 3)`),
+      ),
       /contents_price_requires_premium/,
     );
   });

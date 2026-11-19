@@ -26,16 +26,31 @@ const ABCJS_SRI = 'sha384-7FwdlK0Td0gOOtFTcUymgFHmpCKEObB1/99Ddjh7jBsLNTJJWVUqZ9
 
 const PALETTES: Record<ReaderTheme, Record<string, string>> = {
   light: {
-    bg: '#FFFFFF', text: '#1F2333', muted: '#5E6478', border: '#E6E8F0', codeBg: '#F5F6FA',
-    quoteBg: '#F7F7FC', tableHead: '#F3F4F9',
+    bg: '#FFFFFF',
+    text: '#1F2333',
+    muted: '#5E6478',
+    border: '#E6E8F0',
+    codeBg: '#F5F6FA',
+    quoteBg: '#F7F7FC',
+    tableHead: '#F3F4F9',
   },
   sepia: {
-    bg: '#FBF5E9', text: '#3B2F22', muted: '#7A6A55', border: '#E8DCC6', codeBg: '#F3EAD7',
-    quoteBg: '#F6EEDD', tableHead: '#F1E6D0',
+    bg: '#FBF5E9',
+    text: '#3B2F22',
+    muted: '#7A6A55',
+    border: '#E8DCC6',
+    codeBg: '#F3EAD7',
+    quoteBg: '#F6EEDD',
+    tableHead: '#F1E6D0',
   },
   dark: {
-    bg: '#0F1222', text: '#E7E9F3', muted: '#A2A8BE', border: '#262B45', codeBg: '#171B31',
-    quoteBg: '#151935', tableHead: '#1A1F3A',
+    bg: '#0F1222',
+    text: '#E7E9F3',
+    muted: '#A2A8BE',
+    border: '#262B45',
+    codeBg: '#171B31',
+    quoteBg: '#151935',
+    tableHead: '#1A1F3A',
   },
 };
 

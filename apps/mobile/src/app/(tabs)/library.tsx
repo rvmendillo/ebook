@@ -12,8 +12,16 @@ import { space, usePalette } from '@/theme';
 type Tab = 'saved' | 'reading' | 'owned';
 
 const EMPTY: Record<Tab, { icon: IconName; title: string; body: string }> = {
-  saved: { icon: 'bookmark', title: 'Nothing saved yet', body: 'Tap the bookmark while reading to keep things for later.' },
-  reading: { icon: 'clock', title: 'No reading history', body: 'Articles you start will show up here so you can pick up where you left off.' },
+  saved: {
+    icon: 'bookmark',
+    title: 'Nothing saved yet',
+    body: 'Tap the bookmark while reading to keep things for later.',
+  },
+  reading: {
+    icon: 'clock',
+    title: 'No reading history',
+    body: 'Articles you start will show up here so you can pick up where you left off.',
+  },
   owned: {
     icon: 'credits',
     title: 'No owned items',

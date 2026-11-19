@@ -47,7 +47,10 @@ export function Layout() {
               <br />
               {session?.user.email}
               <br />
-              <button className="btn ghost small" style={{ color: '#fff', padding: '6px 0' }} onClick={() => void signOut()}>
+              <button
+                className="btn ghost small"
+                style={{ color: '#fff', padding: '6px 0' }}
+                onClick={() => void signOut()}>
                 Sign out
               </button>
             </>
@@ -75,7 +78,15 @@ export function Toasts() {
   );
 }
 
-export function PageHead({ title, subtitle, children }: { title: string; subtitle?: string; children?: React.ReactNode }) {
+export function PageHead({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  children?: React.ReactNode;
+}) {
   return (
     <div className="page-head">
       <div>

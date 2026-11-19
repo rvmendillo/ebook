@@ -6,8 +6,21 @@ const NOW = new Date('2026-11-19T12:00:00Z');
 
 Deno.test('premiumState: active monthly subscription', () => {
   const sub: RcSubscriber = {
-    entitlements: { premium: { expires_date: '2026-12-01T00:00:00Z', product_identifier: 'premium_monthly', purchase_date: '2026-11-01T00:00:00Z' } },
-    subscriptions: { premium_monthly: { store: 'app_store', period_type: 'normal', unsubscribe_detected_at: null, billing_issues_detected_at: null } },
+    entitlements: {
+      premium: {
+        expires_date: '2026-12-01T00:00:00Z',
+        product_identifier: 'premium_monthly',
+        purchase_date: '2026-11-01T00:00:00Z',
+      },
+    },
+    subscriptions: {
+      premium_monthly: {
+        store: 'app_store',
+        period_type: 'normal',
+        unsubscribe_detected_at: null,
+        billing_issues_detected_at: null,
+      },
+    },
   };
   assertEquals(premiumState(sub, NOW), {
     is_active: true,
@@ -60,7 +73,12 @@ Deno.test('creditRows: one ledger row per store transaction, refunds reverse', (
       non_subscriptions: {
         credits_30: [
           { id: 'rc1', store_transaction_id: 'tx-1', purchase_date: '2026-11-01T00:00:00Z' },
-          { id: 'rc2', store_transaction_id: 'tx-2', purchase_date: '2026-11-02T00:00:00Z', refunded_at: '2026-11-03T00:00:00Z' },
+          {
+            id: 'rc2',
+            store_transaction_id: 'tx-2',
+            purchase_date: '2026-11-02T00:00:00Z',
+            refunded_at: '2026-11-03T00:00:00Z',
+          },
         ],
         some_other_product: [{ id: 'x', purchase_date: '2026-11-01T00:00:00Z' }],
       },

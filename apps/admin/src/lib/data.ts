@@ -5,13 +5,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 import sample from '../demo/library.json';
-import {
-  mergeConfig,
-  type AppConfig,
-  type Category,
-  type Content,
-  type LibraryBundle,
-} from '../../../../shared/types';
+import { mergeConfig, type AppConfig, type Category, type Content, type LibraryBundle } from '../../../../shared/types';
 import type { Connection } from './connection';
 
 export type ContentInput = Omit<Content, 'id' | 'created_at' | 'updated_at'> & { id?: string };
@@ -32,8 +26,23 @@ export interface Stats {
 
 export interface Activity {
   unlocks: { id: string; user_id: string; content_id: string; credits_spent: number; created_at: string }[];
-  ledger: { id: string; user_id: string; delta: number; kind: string; product_id: string | null; note: string | null; created_at: string }[];
-  subscriptions: { user_id: string; is_active: boolean; product_id: string | null; store: string | null; expires_at: string | null; will_renew: boolean }[];
+  ledger: {
+    id: string;
+    user_id: string;
+    delta: number;
+    kind: string;
+    product_id: string | null;
+    note: string | null;
+    created_at: string;
+  }[];
+  subscriptions: {
+    user_id: string;
+    is_active: boolean;
+    product_id: string | null;
+    store: string | null;
+    expires_at: string | null;
+    will_renew: boolean;
+  }[];
 }
 
 export interface DataSource {
@@ -179,7 +188,8 @@ function createLocalSource(): DataSource {
       throw new Error('Connect Supabase to manage readers and credits.');
     },
     async uploadImage(file) {
-      if (file.size > 600_000) throw new Error('In demo mode images must be under 600 KB. Connect Supabase for real uploads.');
+      if (file.size > 600_000)
+        throw new Error('In demo mode images must be under 600 KB. Connect Supabase for real uploads.');
       return await new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => resolve(String(reader.result));
@@ -203,7 +213,10 @@ function createLocalSource(): DataSource {
       for (const item of bundle.contents) {
         if (db.contents.some((c) => c.slug === item.slug)) continue;
         const { body_html, body_md, ...content } = item;
-        db.contents.push({ ...content, category_id: content.category_id ? (idMap.get(content.category_id) ?? null) : null });
+        db.contents.push({
+          ...content,
+          category_id: content.category_id ? (idMap.get(content.category_id) ?? null) : null,
+        });
         db.bodies[content.id] = { md: body_md ?? '', html: body_html };
         added++;
       }
@@ -215,7 +228,11 @@ function createLocalSource(): DataSource {
       return {
         generated_at: now(),
         categories: db.categories,
-        contents: db.contents.map((c) => ({ ...c, body_md: db.bodies[c.id]?.md ?? '', body_html: db.bodies[c.id]?.html ?? '' })),
+        contents: db.contents.map((c) => ({
+          ...c,
+          body_md: db.bodies[c.id]?.md ?? '',
+          body_html: db.bodies[c.id]?.html ?? '',
+        })),
         config: db.config,
       };
     },
@@ -265,7 +282,10 @@ function createSupabaseSource(conn: Connection): DataSource {
       fail(error);
     },
     async listContents() {
-      const { data, error } = await db.from('contents').select(CONTENT_COLUMNS).order('updated_at', { ascending: false });
+      const { data, error } = await db
+        .from('contents')
+        .select(CONTENT_COLUMNS)
+        .order('updated_at', { ascending: false });
       fail(error);
       return (data ?? []) as unknown as Content[];
     },
@@ -357,7 +377,11 @@ function createSupabaseSource(conn: Connection): DataSource {
       return { categories: bundle.categories.length, contents: added };
     },
     async exportLibrary() {
-      const [categories, contents, config] = await Promise.all([source.listCategories(), source.listContents(), source.getConfig()]);
+      const [categories, contents, config] = await Promise.all([
+        source.listCategories(),
+        source.listContents(),
+        source.getConfig(),
+      ]);
       const { data, error } = await db.from('content_bodies').select('content_id, body_md, body_html');
       fail(error);
       const bodies = new Map((data ?? []).map((b) => [b.content_id as string, b]));

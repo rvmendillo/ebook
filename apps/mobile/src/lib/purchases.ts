@@ -133,7 +133,13 @@ export async function loadPacks(packs: CreditPack[]): Promise<PackOffer[]> {
   const byId = new Map(products.map((p) => [p.identifier, p]));
   return packs
     .filter((p) => byId.has(p.id))
-    .map((p) => ({ id: p.id, credits: p.credits, badge: p.badge, price: byId.get(p.id)!.priceString, product: byId.get(p.id) }));
+    .map((p) => ({
+      id: p.id,
+      credits: p.credits,
+      badge: p.badge,
+      price: byId.get(p.id)!.priceString,
+      product: byId.get(p.id),
+    }));
 }
 
 function cancelled(error: unknown): boolean {

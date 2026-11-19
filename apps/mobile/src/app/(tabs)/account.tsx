@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import * as WebBrowser from 'expo-web-browser';
 import { useEffect, useState } from 'react';
-import { Alert, Linking, StyleSheet, View } from 'react-native';
+import { Alert, Linking, Pressable, Share, StyleSheet, View } from 'react-native';
 
 import { Icon } from '@/components/icon';
 import { Screen } from '@/components/screen';
@@ -43,7 +43,10 @@ export default function AccountScreen() {
     setRestoring(true);
     try {
       const premium = await app.restore();
-      Alert.alert(premium ? 'Purchases restored' : 'Nothing to restore', premium ? 'Premium is active.' : 'No active subscription was found.');
+      Alert.alert(
+        premium ? 'Purchases restored' : 'Nothing to restore',
+        premium ? 'Premium is active.' : 'No active subscription was found.',
+      );
     } catch {
       Alert.alert('Restore failed', 'Please try again in a moment.');
     } finally {
@@ -172,7 +175,12 @@ export default function AccountScreen() {
       <Card style={styles.card}>
         {privacyRequired ? (
           <>
-            <Row icon="privacy" title="Privacy choices" subtitle="Ad personalisation consent" onPress={() => void showPrivacyOptions()} />
+            <Row
+              icon="privacy"
+              title="Privacy choices"
+              subtitle="Ad personalisation consent"
+              onPress={() => void showPrivacyOptions()}
+            />
             <Divider />
           </>
         ) : null}
@@ -190,6 +198,16 @@ export default function AccountScreen() {
         <T variant="caption" muted style={{ textAlign: 'center' }}>
           {mode}
         </T>
+        {app.session.userId ? (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityHint="Shares your reader ID, for example with support"
+            onPress={() => void Share.share({ message: app.session.userId ?? '' })}>
+            <T variant="caption" muted style={{ textAlign: 'center' }}>
+              Reader ID · {app.session.userId.slice(0, 8)}… (tap to share)
+            </T>
+          </Pressable>
+        ) : null}
         {app.simulatedStore ? (
           <Button
             title="Reset demo purchases"

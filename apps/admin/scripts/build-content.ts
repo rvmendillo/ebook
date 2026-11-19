@@ -37,7 +37,11 @@ export function parseFrontMatter(src: string): { data: Record<string, unknown>; 
     else if (v === 'true' || v === 'false') data[key] = v === 'true';
     else if (/^-?\d+(\.\d+)?$/.test(v)) data[key] = Number(v);
     else if (v.startsWith('[') && v.endsWith(']')) {
-      data[key] = v.slice(1, -1).split(',').map((s) => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+      data[key] = v
+        .slice(1, -1)
+        .split(',')
+        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .filter(Boolean);
     } else data[key] = v.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
   }
   return { data, body: src.slice(m[0].length) };
@@ -57,7 +61,9 @@ function main() {
   const categories: Category[] = categoriesIn.map((c) => ({ id: stableId(`category:${c.slug}`), ...c }));
   const bySlug = new Map(categories.map((c) => [c.slug, c]));
 
-  const files = readdirSync(join(root, 'content/samples')).filter((f) => f.endsWith('.md')).sort();
+  const files = readdirSync(join(root, 'content/samples'))
+    .filter((f) => f.endsWith('.md'))
+    .sort();
   const base = Date.parse('2026-11-15T09:00:00Z');
   const contents: LibraryBundle['contents'] = files.map((file, index) => {
     const { data, body } = parseFrontMatter(read(`content/samples/${file}`));

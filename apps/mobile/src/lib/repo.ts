@@ -3,13 +3,7 @@
  * with the app (src/demo/library.json, generated from /content).
  */
 import library from '@/demo/library.json';
-import {
-  mergeConfig,
-  type AppConfig,
-  type Category,
-  type Content,
-  type LibraryBundle,
-} from '@shared/types';
+import { mergeConfig, type AppConfig, type Category, type Content, type LibraryBundle } from '@shared/types';
 
 import { load, save } from './storage';
 import { supabase } from './supabase';
@@ -123,7 +117,12 @@ export async function syncPurchases(): Promise<{ premium: boolean; credits: numb
 
 export type UnlockResult =
   | { ok: true; balance: number; already_owned?: boolean }
-  | { ok: false; reason: 'insufficient_credits' | 'not_purchasable' | 'not_signed_in'; balance?: number; price?: number };
+  | {
+      ok: false;
+      reason: 'insufficient_credits' | 'not_purchasable' | 'not_signed_in';
+      balance?: number;
+      price?: number;
+    };
 
 export async function unlockWithCredits(contentId: string): Promise<UnlockResult> {
   if (!supabase) throw new Error('No backend configured');
@@ -155,7 +154,10 @@ export async function ensureSession(): Promise<Session> {
   if (data.session) return toSession(data.session.user);
   const { data: anon, error } = await supabase.auth.signInAnonymously();
   if (error) {
-    console.warn('Anonymous sign-in failed. Enable it in Supabase → Authentication → Sign In / Providers.', error.message);
+    console.warn(
+      'Anonymous sign-in failed. Enable it in Supabase → Authentication → Sign In / Providers.',
+      error.message,
+    );
     return NO_SESSION;
   }
   return toSession(anon.user);

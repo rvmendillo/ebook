@@ -28,10 +28,7 @@ export function T({
 }: TextProps & { variant?: Variant; color?: string; muted?: boolean }) {
   const p = usePalette();
   return (
-    <Text
-      {...rest}
-      style={[text[variant] as TextStyle, { color: color ?? (muted ? p.textMuted : p.text) }, style]}
-    />
+    <Text {...rest} style={[text[variant] as TextStyle, { color: color ?? (muted ? p.textMuted : p.text) }, style]} />
   );
 }
 
@@ -130,9 +127,7 @@ export function Badge({
 
 export function Card({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
   const p = usePalette();
-  return (
-    <View style={[styles.card, { backgroundColor: p.surface, borderColor: p.border }, style]}>{children}</View>
-  );
+  return <View style={[styles.card, { backgroundColor: p.surface, borderColor: p.border }, style]}>{children}</View>;
 }
 
 export function Chip({
@@ -158,7 +153,9 @@ export function Chip({
         { backgroundColor: selected ? active : p.surface, borderColor: selected ? active : p.border },
         pressed && { opacity: 0.8 },
       ]}>
-      <Text style={[text.small as TextStyle, { color: selected ? '#FFFFFF' : p.text, fontWeight: '600' }]}>{label}</Text>
+      <Text style={[text.small as TextStyle, { color: selected ? '#FFFFFF' : p.text, fontWeight: '600' }]}>
+        {label}
+      </Text>
     </Pressable>
   );
 }

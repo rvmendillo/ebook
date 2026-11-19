@@ -15,7 +15,12 @@ Deno.serve(async (req) => {
 
   try {
     const { premium, credits } = await syncUser(user.id);
-    return json({ premium: premium.is_active, expires_at: premium.expires_at, product_id: premium.product_id, credits });
+    return json({
+      premium: premium.is_active,
+      expires_at: premium.expires_at,
+      product_id: premium.product_id,
+      credits,
+    });
   } catch (err) {
     console.error(err);
     return json({ error: 'sync_failed', message: String(err) }, 502);

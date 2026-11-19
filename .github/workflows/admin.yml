@@ -58,3 +58,9 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+        # Pages must be switched on once by a repo admin; don't fail the build until then.
+        continue-on-error: true
+      - name: How to enable GitHub Pages
+        if: steps.deployment.outcome == 'failure'
+        run: |
+          echo "::warning title=GitHub Pages is not enabled::Enable it once in Settings → Pages → Build and deployment → Source: GitHub Actions, then re-run this workflow. Until then, download the admin build from this run's 'github-pages' artifact."

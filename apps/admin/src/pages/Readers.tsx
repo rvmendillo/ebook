@@ -9,10 +9,11 @@ const when = (iso: string | null) => (iso ? new Date(iso).toLocaleString() : '�
 
 export function Readers() {
   const { data, notify, connection } = useAdmin();
-  const { data: snap, error, reload } = useLoad(
-    async () => ({ activity: await data.activity(), contents: await data.listContents() }),
-    [data],
-  );
+  const {
+    data: snap,
+    error,
+    reload,
+  } = useLoad(async () => ({ activity: await data.activity(), contents: await data.listContents() }), [data]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState('5');
   const [note, setNote] = useState('Thank-you gift');
@@ -74,7 +75,13 @@ export function Readers() {
                     <td>
                       <code title={s.user_id}>{short(s.user_id)}</code>
                     </td>
-                    <td>{s.is_active ? <span className="badge free">active</span> : <span className="badge draft">inactive</span>}</td>
+                    <td>
+                      {s.is_active ? (
+                        <span className="badge free">active</span>
+                      ) : (
+                        <span className="badge draft">inactive</span>
+                      )}
+                    </td>
                     <td className="small">
                       {s.product_id ?? '—'} <span className="faint">{s.store ?? ''}</span>
                     </td>
@@ -157,11 +164,18 @@ export function Readers() {
         <div className="card stack">
           <div>
             <h2>Gift credits</h2>
-            <p className="sub">Compensate a reader or run a promotion. Reader ids are shown in the app’s Account → Sign-in email or in Supabase Auth.</p>
+            <p className="sub">
+              Compensate a reader or run a promotion. Readers can share their ID from the app’s Account screen; it’s
+              also listed in Supabase → Authentication → Users.
+            </p>
           </div>
           <label className="field">
             Reader id (UUID)
-            <input value={userId} onChange={(e) => setUserId(e.target.value)} placeholder="00000000-0000-0000-0000-000000000000" />
+            <input
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+              placeholder="00000000-0000-0000-0000-000000000000"
+            />
           </label>
           <div className="fields">
             <label className="field">

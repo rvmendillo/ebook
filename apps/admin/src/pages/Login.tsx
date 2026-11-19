@@ -33,19 +33,31 @@ export function Login() {
         </div>
         <label className="field">
           Email
-          <input type="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input
+            type="email"
+            autoComplete="username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </label>
         <label className="field">
           Password
-          <input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </label>
         {error ? <div className="notice error">{error}</div> : null}
         <button className="btn primary" disabled={busy}>
           {busy ? 'Signing in…' : 'Sign in'}
         </button>
         <p className="faint small center">
-          Create your admin user in Supabase → Authentication → Users, then add it to the <code>admins</code> table
-          (see docs/SETUP.md).
+          Create your admin user in Supabase → Authentication → Users, then add it to the <code>admins</code> table (see
+          docs/SETUP.md).
         </p>
         <button
           type="button"
@@ -69,8 +81,8 @@ export function NotAdmin() {
       <div className="card stack">
         <h2>Almost there</h2>
         <p className="muted">
-          You’re signed in as <b>{session?.user.email}</b>, but this account isn’t an admin yet. Run this in the Supabase
-          SQL editor, then reload:
+          You’re signed in as <b>{session?.user.email}</b>, but this account isn’t an admin yet. Run this in the
+          Supabase SQL editor, then reload:
         </p>
         <pre className="snippet">{sql}</pre>
         <div className="row">

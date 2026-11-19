@@ -3,10 +3,7 @@ import { adminClient } from './supabase.ts';
 
 /** Subset of the RevenueCat v1 subscriber payload that we rely on. */
 export interface RcSubscriber {
-  entitlements?: Record<
-    string,
-    { expires_date: string | null; product_identifier: string; purchase_date: string }
-  >;
+  entitlements?: Record<string, { expires_date: string | null; product_identifier: string; purchase_date: string }>;
   subscriptions?: Record<
     string,
     {
@@ -112,7 +109,13 @@ export function creditRows(userId: string, subscriber: RcSubscriber, packs: Cred
       const tx = purchase.store_transaction_id || purchase.id;
       rows.push({ user_id: userId, delta: pack.credits, kind: 'purchase', product_id: pack.id, transaction_id: tx });
       if (purchase.refunded_at) {
-        rows.push({ user_id: userId, delta: -pack.credits, kind: 'refund', product_id: pack.id, transaction_id: `refund:${tx}` });
+        rows.push({
+          user_id: userId,
+          delta: -pack.credits,
+          kind: 'refund',
+          product_id: pack.id,
+          transaction_id: `refund:${tx}`,
+        });
       }
     }
   }

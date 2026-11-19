@@ -2,16 +2,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { useCallback, useMemo, useRef, useState } from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  Modal,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { ActivityIndicator, Alert, Modal, Pressable, ScrollView, StyleSheet, useColorScheme, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { decideAccess, type AccessDecision } from '@shared/access';
@@ -200,7 +191,12 @@ export default function ReadScreen() {
 function HeaderButton({ icon, label, onPress }: { icon: IconName; label: string; onPress: () => void }) {
   const p = usePalette();
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={label} hitSlop={8} onPress={onPress} style={styles.headerButton}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      hitSlop={8}
+      onPress={onPress}
+      style={styles.headerButton}>
       <Icon name={icon} size={20} color={p.primary} />
     </Pressable>
   );
@@ -265,7 +261,11 @@ function Gate({
                 if (result.reason === 'insufficient_credits') {
                   router.push({ pathname: '/paywall', params: { focus: 'credits', contentId: content.id } });
                 } else {
-                  setMessage('This item can’t be bought with credits.');
+                  setMessage(
+                    result.reason === 'not_signed_in'
+                      ? 'Couldn’t reach your account. Check your connection and try again.'
+                      : 'This item can’t be bought with credits.',
+                  );
                 }
               }
             } catch {
@@ -281,11 +281,7 @@ function Gate({
 
   return (
     <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { justifyContent: 'flex-end' }]}>
-      <LinearGradient
-        pointerEvents="none"
-        colors={[`${background}00`, background]}
-        style={{ height: 120 }}
-      />
+      <LinearGradient pointerEvents="none" colors={[`${background}00`, background]} style={{ height: 120 }} />
       <View
         style={[
           styles.gate,
@@ -326,7 +322,12 @@ function Gate({
                 </T>
               </View>
             </View>
-            <Button title="Unlock everything with Premium" kind="premium" icon="crown" onPress={() => router.push('/paywall')} />
+            <Button
+              title="Unlock everything with Premium"
+              kind="premium"
+              icon="crown"
+              onPress={() => router.push('/paywall')}
+            />
             {decision.price ? (
               <Button
                 title={`Own it for ${creditsLabel(decision.price)}`}
@@ -420,7 +421,12 @@ function StyleSheetModal({ visible, onClose }: { visible: boolean; onClose: () =
           </T>
           <View style={{ flexDirection: 'row', gap: space.sm, flexWrap: 'wrap' }}>
             {THEMES.map((t) => (
-              <Chip key={t.id} label={t.label} selected={settings.readerTheme === t.id} onPress={() => updateSettings({ readerTheme: t.id })} />
+              <Chip
+                key={t.id}
+                label={t.label}
+                selected={settings.readerTheme === t.id}
+                onPress={() => updateSettings({ readerTheme: t.id })}
+              />
             ))}
           </View>
           <T variant="overline" muted>

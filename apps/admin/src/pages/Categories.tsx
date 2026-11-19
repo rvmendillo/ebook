@@ -43,7 +43,9 @@ export function Categories() {
 
   return (
     <>
-      <PageHead title="Categories" subtitle="Subjects shown as tiles on the home screen — math, music, programming and more.">
+      <PageHead
+        title="Categories"
+        subtitle="Subjects shown as tiles on the home screen — math, music, programming and more.">
         <button className="btn primary" onClick={() => setEditing({ ...BLANK, sort_order: (cats?.length ?? 0) + 1 })}>
           + New category
         </button>
@@ -57,7 +59,13 @@ export function Categories() {
               Name
               <input
                 value={editing.name}
-                onChange={(e) => setEditing({ ...editing, name: e.target.value, slug: editing.id ? editing.slug : slugify(e.target.value) })}
+                onChange={(e) =>
+                  setEditing({
+                    ...editing,
+                    name: e.target.value,
+                    slug: editing.id ? editing.slug : slugify(e.target.value),
+                  })
+                }
               />
             </label>
             <label className="field">
@@ -66,15 +74,27 @@ export function Categories() {
             </label>
             <label className="field">
               Icon <span className="help">An emoji or 1–3 characters</span>
-              <input value={editing.icon} maxLength={4} onChange={(e) => setEditing({ ...editing, icon: e.target.value })} />
+              <input
+                value={editing.icon}
+                maxLength={4}
+                onChange={(e) => setEditing({ ...editing, icon: e.target.value })}
+              />
             </label>
             <label className="field">
               Colour
-              <input type="color" value={editing.color} onChange={(e) => setEditing({ ...editing, color: e.target.value.toUpperCase() })} />
+              <input
+                type="color"
+                value={editing.color}
+                onChange={(e) => setEditing({ ...editing, color: e.target.value.toUpperCase() })}
+              />
             </label>
             <label className="field">
               Order
-              <input type="number" value={editing.sort_order} onChange={(e) => setEditing({ ...editing, sort_order: Number(e.target.value) })} />
+              <input
+                type="number"
+                value={editing.sort_order}
+                onChange={(e) => setEditing({ ...editing, sort_order: Number(e.target.value) })}
+              />
             </label>
           </div>
           <div className="row">
@@ -86,7 +106,10 @@ export function Categories() {
           </div>
           <label className="field">
             Description
-            <input value={editing.description} onChange={(e) => setEditing({ ...editing, description: e.target.value })} />
+            <input
+              value={editing.description}
+              onChange={(e) => setEditing({ ...editing, description: e.target.value })}
+            />
           </label>
           <div className="row">
             <button className="btn primary" onClick={() => void save()}>
@@ -109,7 +132,9 @@ export function Categories() {
               <div style={{ flex: 1 }}>
                 <h3>{c.name}</h3>
                 <div className="muted small">{c.description || '—'}</div>
-                <div className="faint small">/{c.slug} · order {c.sort_order}</div>
+                <div className="faint small">
+                  /{c.slug} · order {c.sort_order}
+                </div>
               </div>
               <button className="btn small" onClick={() => setEditing(c)}>
                 Edit

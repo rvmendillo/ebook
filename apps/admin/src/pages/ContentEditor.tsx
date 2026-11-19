@@ -138,7 +138,8 @@ export function ContentEditor() {
       if (!d) return d;
       const next = { ...d, [key]: value };
       if (key === 'title' && !d.slugTouched) next.slug = slugify(String(value));
-      if (key === 'kind' && (!d.body.trim() || Object.values(TEMPLATES).includes(d.body))) next.body = TEMPLATES[value as ContentKind];
+      if (key === 'kind' && (!d.body.trim() || Object.values(TEMPLATES).includes(d.body)))
+        next.body = TEMPLATES[value as ContentKind];
       return next;
     });
   };
@@ -148,13 +149,20 @@ export function ContentEditor() {
   const save = async (statusOverride?: ContentStatus) => {
     const status = statusOverride ?? draft.status;
     if (!draft.title.trim()) return notify('Give it a title first', 'error');
-    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(draft.slug)) return notify('Slug may only contain lowercase letters, numbers and dashes', 'error');
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(draft.slug))
+      return notify('Slug may only contain lowercase letters, numbers and dashes', 'error');
     const price = draft.price_credits ? Number.parseInt(draft.price_credits, 10) : null;
     if (draft.access === 'premium' && price !== null && (!Number.isFinite(price) || price <= 0)) {
       return notify('Credit price must be a positive whole number', 'error');
     }
     const publishedAt =
-      status === 'published' ? (draft.published_at ? new Date(draft.published_at).toISOString() : new Date().toISOString()) : draft.published_at ? new Date(draft.published_at).toISOString() : null;
+      status === 'published'
+        ? draft.published_at
+          ? new Date(draft.published_at).toISOString()
+          : new Date().toISOString()
+        : draft.published_at
+          ? new Date(draft.published_at).toISOString()
+          : null;
     const input: ContentInput = {
       id: draft.id,
       slug: draft.slug,
@@ -164,7 +172,10 @@ export function ContentEditor() {
       category_id: draft.category_id,
       cover_url: draft.cover_url.trim() || null,
       author: draft.author.trim(),
-      tags: draft.tags.split(',').map((t) => t.trim()).filter(Boolean),
+      tags: draft.tags
+        .split(',')
+        .map((t) => t.trim())
+        .filter(Boolean),
       access: draft.access,
       price_credits: draft.access === 'premium' ? price : null,
       reading_minutes: rendered.readingMinutes,
@@ -203,7 +214,9 @@ export function ContentEditor() {
 
   return (
     <>
-      <PageHead title={isNew ? 'New content' : 'Edit content'} subtitle={dirty ? 'Unsaved changes' : draft.status === 'published' ? 'Published' : 'Draft'}>
+      <PageHead
+        title={isNew ? 'New content' : 'Edit content'}
+        subtitle={dirty ? 'Unsaved changes' : draft.status === 'published' ? 'Published' : 'Draft'}>
         <button className="btn" onClick={() => navigate('/content')}>
           Back
         </button>
@@ -226,7 +239,11 @@ export function ContentEditor() {
           <div className="card stack">
             <label className="field">
               Title
-              <input value={draft.title} onChange={(e) => set('title', e.target.value)} placeholder="e.g. The Circle of Fifths, Explained" />
+              <input
+                value={draft.title}
+                onChange={(e) => set('title', e.target.value)}
+                placeholder="e.g. The Circle of Fifths, Explained"
+              />
             </label>
             <label className="field">
               Summary <span className="help">Shown on cards and in search — one or two sentences.</span>
@@ -290,17 +307,30 @@ export function ContentEditor() {
               ) : null}
               <label className="field">
                 Tags <span className="help">Comma separated</span>
-                <input value={draft.tags} onChange={(e) => set('tags', e.target.value)} placeholder="beginner, theory" />
+                <input
+                  value={draft.tags}
+                  onChange={(e) => set('tags', e.target.value)}
+                  placeholder="beginner, theory"
+                />
               </label>
               <label className="field">
                 Publish date <span className="help">Future date = scheduled</span>
-                <input type="datetime-local" value={draft.published_at} onChange={(e) => set('published_at', e.target.value)} />
+                <input
+                  type="datetime-local"
+                  value={draft.published_at}
+                  onChange={(e) => set('published_at', e.target.value)}
+                />
               </label>
             </div>
             <div className="row">
               <label className="field" style={{ flex: 1 }}>
-                Cover image URL <span className="help">Optional — a cover is generated from the category otherwise</span>
-                <input value={draft.cover_url} onChange={(e) => set('cover_url', e.target.value)} placeholder="https://…" />
+                Cover image URL{' '}
+                <span className="help">Optional — a cover is generated from the category otherwise</span>
+                <input
+                  value={draft.cover_url}
+                  onChange={(e) => set('cover_url', e.target.value)}
+                  placeholder="https://…"
+                />
               </label>
               <button className="btn" style={{ alignSelf: 'flex-end' }} onClick={() => coverInput.current?.click()}>
                 Upload cover
@@ -318,7 +348,11 @@ export function ContentEditor() {
               />
             </div>
             <label className="check">
-              <input type="checkbox" checked={draft.is_featured} onChange={(e) => set('is_featured', e.target.checked)} />
+              <input
+                type="checkbox"
+                checked={draft.is_featured}
+                onChange={(e) => set('is_featured', e.target.checked)}
+              />
               Feature on the home screen
             </label>
           </div>
@@ -326,8 +360,8 @@ export function ContentEditor() {
           <div>
             <MarkdownEditor value={draft.body} onChange={(v) => set('body', v)} onUploadImage={upload} />
             <p className="faint small">
-              {rendered.words} words · {rendered.readingMinutes} min read · {rendered.headings.length} sections. Free readers
-              see everything above <code>&lt;!-- more --&gt;</code> before the ad / paywall.
+              {rendered.words} words · {rendered.readingMinutes} min read · {rendered.headings.length} sections. Free
+              readers see everything above <code>&lt;!-- more --&gt;</code> before the ad / paywall.
             </p>
           </div>
         </div>

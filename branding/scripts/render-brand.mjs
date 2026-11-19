@@ -36,9 +36,7 @@ const BG = inner(src('background.svg'));
 
 /** Compose a square 1024-unit artboard rendered at `size` px. */
 function artboard({ size = 1024, background = false, mark = MARK, scale = 1, dy = 0, radius = 0 }) {
-  const clip = radius
-    ? `<clipPath id="pm-clip"><rect width="1024" height="1024" rx="${radius}"/></clipPath>`
-    : '';
+  const clip = radius ? `<clipPath id="pm-clip"><rect width="1024" height="1024" rx="${radius}"/></clipPath>` : '';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="${size}" height="${size}">
     <defs>${clip}</defs>
     <g ${radius ? 'clip-path="url(#pm-clip)"' : ''}>
@@ -68,9 +66,12 @@ const banner = (w, h) => `
     <div style="font-size:38px;font-weight:500;opacity:.92;margin-top:18px">Learn anything, one page at a time.</div>
     <div style="display:flex;gap:12px;margin-top:34px;flex-wrap:nowrap;white-space:nowrap">
       ${['∑ Math', '♪ Music', '</> Programming', '⚛ Science', '✦ & more']
-        .map((t) => `<span style="font-size:22px;font-weight:700;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28)">${t
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')}</span>`)
+        .map(
+          (t) =>
+            `<span style="font-size:22px;font-weight:700;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28)">${t
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')}</span>`,
+        )
         .join('')}
     </div>
   </div>
@@ -98,7 +99,12 @@ const jobs = [
   { file: 'favicon-512.png', size: 512, svg: ICON_ROUNDED(512) },
   { file: 'favicon-192.png', size: 192, svg: ICON_ROUNDED(192) },
   { file: 'favicon-48.png', size: 48, svg: ICON_ROUNDED(48) },
-  { file: 'apple-touch-icon.png', size: 180, svg: artboard({ size: 180, background: true, scale: 0.84 }), opaque: true },
+  {
+    file: 'apple-touch-icon.png',
+    size: 180,
+    svg: artboard({ size: 180, background: true, scale: 0.84 }),
+    opaque: true,
+  },
 ];
 
 const pw = loadPlaywright();
@@ -121,7 +127,10 @@ for (const j of jobs) {
 await shoot(banner(1280, 640), 1280, 640, 'banner.png', { opaque: true });
 
 // Lockups need their natural width.
-for (const [file, dark] of [['logo-lockup.png', false], ['logo-lockup-dark.png', true]]) {
+for (const [file, dark] of [
+  ['logo-lockup.png', false],
+  ['logo-lockup-dark.png', true],
+]) {
   await tab.setViewportSize({ width: 1200, height: 260 });
   await tab.setContent(page(lockup(dark), 1200, 260), { waitUntil: 'networkidle' });
   await tab.evaluate(() => document.fonts.ready);
@@ -137,8 +146,20 @@ writeFileSync(join(out, 'icon-square.svg'), artboard({ background: true, scale: 
 
 // Distribute to the apps.
 const copies = {
-  'apps/mobile/assets/images': ['icon.png', 'android-icon-foreground.png', 'android-icon-background.png', 'android-icon-monochrome.png', 'splash-icon.png'],
-  'apps/admin/public': ['favicon-48.png', 'favicon-192.png', 'favicon-512.png', 'apple-touch-icon.png', 'icon-rounded.svg'],
+  'apps/mobile/assets/images': [
+    'icon.png',
+    'android-icon-foreground.png',
+    'android-icon-background.png',
+    'android-icon-monochrome.png',
+    'splash-icon.png',
+  ],
+  'apps/admin/public': [
+    'favicon-48.png',
+    'favicon-192.png',
+    'favicon-512.png',
+    'apple-touch-icon.png',
+    'icon-rounded.svg',
+  ],
 };
 for (const [dir, files] of Object.entries(copies)) {
   const target = join(root, dir);

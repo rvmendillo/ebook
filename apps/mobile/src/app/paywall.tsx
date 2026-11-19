@@ -75,7 +75,10 @@ export default function PaywallScreen() {
     setBusy('restore');
     try {
       const premium = await app.restore();
-      Alert.alert(premium ? 'Purchases restored' : 'Nothing to restore', premium ? 'Premium is active again.' : 'We couldn’t find an active subscription for this account.');
+      Alert.alert(
+        premium ? 'Purchases restored' : 'Nothing to restore',
+        premium ? 'Premium is active again.' : 'We couldn’t find an active subscription for this account.',
+      );
       if (premium) router.back();
     } catch (error) {
       fail(error);
@@ -94,7 +97,7 @@ export default function PaywallScreen() {
           colors={[brand.night, brand.indigoDeep, brand.violet]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          style={[styles.hero, { paddingTop: (Platform.OS === 'ios' ? space.xl : insets.top + space.lg) }]}>
+          style={[styles.hero, { paddingTop: Platform.OS === 'ios' ? space.xl : insets.top + space.lg }]}>
           <Pressable
             accessibilityRole="button"
             accessibilityLabel="Close"
@@ -225,8 +228,8 @@ export default function PaywallScreen() {
 
         <View style={styles.legal}>
           <T variant="caption" muted style={{ textAlign: 'center' }}>
-            Subscriptions renew automatically until cancelled. Cancel at least 24 hours before the end of the
-            current period in your {storeName} account settings. Credits are consumable, non-refundable and never expire.
+            Subscriptions renew automatically until cancelled. Cancel at least 24 hours before the end of the current
+            period in your {storeName} account settings. Credits are consumable, non-refundable and never expire.
           </T>
           <View style={styles.links}>
             <Pressable onPress={() => config && WebBrowser.openBrowserAsync(config.links.terms)}>

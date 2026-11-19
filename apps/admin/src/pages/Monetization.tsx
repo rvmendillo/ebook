@@ -10,13 +10,19 @@ export function Monetization() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    void data.getConfig().then(setCfg).catch((e: Error) => notify(e.message, 'error'));
+    void data
+      .getConfig()
+      .then(setCfg)
+      .catch((e: Error) => notify(e.message, 'error'));
   }, [data, notify]);
 
   if (!cfg) return <p className="muted">Loading…</p>;
 
   const setPack = (i: number, patch: Partial<CreditPack>) =>
-    setCfg({ ...cfg, pricing: { credit_packs: cfg.pricing.credit_packs.map((p, j) => (j === i ? { ...p, ...patch } : p)) } });
+    setCfg({
+      ...cfg,
+      pricing: { credit_packs: cfg.pricing.credit_packs.map((p, j) => (j === i ? { ...p, ...patch } : p)) },
+    });
 
   const save = async () => {
     setSaving(true);
@@ -35,7 +41,9 @@ export function Monetization() {
 
   return (
     <>
-      <PageHead title="Monetization" subtitle="Ads for the free tier, the Premium subscription, and pay-as-you-go credits.">
+      <PageHead
+        title="Monetization"
+        subtitle="Ads for the free tier, the Premium subscription, and pay-as-you-go credits.">
         <button className="btn primary" disabled={saving} onClick={() => void save()}>
           {saving ? 'Saving…' : 'Save changes'}
         </button>
@@ -49,7 +57,11 @@ export function Monetization() {
           </div>
           <label className="field">
             Ad before free content
-            <select value={cfg.ads.gate} onChange={(e) => setCfg({ ...cfg, ads: { ...cfg.ads, gate: e.target.value as AppConfig['ads']['gate'] } })}>
+            <select
+              value={cfg.ads.gate}
+              onChange={(e) =>
+                setCfg({ ...cfg, ads: { ...cfg.ads, gate: e.target.value as AppConfig['ads']['gate'] } })
+              }>
               <option value="rewarded">Rewarded video — reader taps “Watch ad” (best eCPM)</option>
               <option value="interstitial">Interstitial — full-screen ad, then read</option>
               <option value="off">Off — free content opens without ads</option>
@@ -66,12 +78,16 @@ export function Monetization() {
             />
           </label>
           <label className="check">
-            <input type="checkbox" checked={cfg.ads.banners} onChange={(e) => setCfg({ ...cfg, ads: { ...cfg.ads, banners: e.target.checked } })} />
+            <input
+              type="checkbox"
+              checked={cfg.ads.banners}
+              onChange={(e) => setCfg({ ...cfg, ads: { ...cfg.ads, banners: e.target.checked } })}
+            />
             Show banner ads in lists (free readers only)
           </label>
           <div className="notice small">
-            Ad unit IDs are set at build time (GitHub secrets <code>EXPO_PUBLIC_ADMOB_*</code>). Until then the app shows
-            Google’s test ads.
+            Ad unit IDs are set at build time (GitHub secrets <code>EXPO_PUBLIC_ADMOB_*</code>). Until then the app
+            shows Google’s test ads.
           </div>
         </div>
 
@@ -82,11 +98,17 @@ export function Monetization() {
           </div>
           <label className="field">
             Headline
-            <input value={cfg.paywall.headline} onChange={(e) => setCfg({ ...cfg, paywall: { ...cfg.paywall, headline: e.target.value } })} />
+            <input
+              value={cfg.paywall.headline}
+              onChange={(e) => setCfg({ ...cfg, paywall: { ...cfg.paywall, headline: e.target.value } })}
+            />
           </label>
           <label className="field">
             Sub-headline
-            <input value={cfg.paywall.subheadline} onChange={(e) => setCfg({ ...cfg, paywall: { ...cfg.paywall, subheadline: e.target.value } })} />
+            <input
+              value={cfg.paywall.subheadline}
+              onChange={(e) => setCfg({ ...cfg, paywall: { ...cfg.paywall, subheadline: e.target.value } })}
+            />
           </label>
           <label className="field">
             Benefits <span className="help">One per line</span>
@@ -129,18 +151,32 @@ export function Monetization() {
                     <input value={p.id} onChange={(e) => setPack(i, { id: e.target.value.trim() })} />
                   </td>
                   <td>
-                    <input type="number" min={1} value={p.credits} onChange={(e) => setPack(i, { credits: Number(e.target.value) })} />
+                    <input
+                      type="number"
+                      min={1}
+                      value={p.credits}
+                      onChange={(e) => setPack(i, { credits: Number(e.target.value) })}
+                    />
                   </td>
                   <td>
                     <input value={p.fallback_price} onChange={(e) => setPack(i, { fallback_price: e.target.value })} />
                   </td>
                   <td>
-                    <input value={p.badge ?? ''} placeholder="optional" onChange={(e) => setPack(i, { badge: e.target.value || undefined })} />
+                    <input
+                      value={p.badge ?? ''}
+                      placeholder="optional"
+                      onChange={(e) => setPack(i, { badge: e.target.value || undefined })}
+                    />
                   </td>
                   <td>
                     <button
                       className="btn small danger"
-                      onClick={() => setCfg({ ...cfg, pricing: { credit_packs: cfg.pricing.credit_packs.filter((_, j) => j !== i) } })}>
+                      onClick={() =>
+                        setCfg({
+                          ...cfg,
+                          pricing: { credit_packs: cfg.pricing.credit_packs.filter((_, j) => j !== i) },
+                        })
+                      }>
                       Remove
                     </button>
                   </td>
@@ -155,7 +191,16 @@ export function Monetization() {
             onClick={() =>
               setCfg({
                 ...cfg,
-                pricing: { credit_packs: [...cfg.pricing.credit_packs, { id: `credits_${(cfg.pricing.credit_packs.length + 1) * 10}`, credits: 10, fallback_price: '$1.99' }] },
+                pricing: {
+                  credit_packs: [
+                    ...cfg.pricing.credit_packs,
+                    {
+                      id: `credits_${(cfg.pricing.credit_packs.length + 1) * 10}`,
+                      credits: 10,
+                      fallback_price: '$1.99',
+                    },
+                  ],
+                },
               })
             }>
             + Add pack
@@ -169,11 +214,16 @@ export function Monetization() {
           {(['privacy', 'terms', 'support'] as const).map((k) => (
             <label key={k} className="field">
               {k === 'privacy' ? 'Privacy policy URL' : k === 'terms' ? 'Terms of use URL' : 'Support (URL or mailto:)'}
-              <input value={cfg.links[k]} onChange={(e) => setCfg({ ...cfg, links: { ...cfg.links, [k]: e.target.value } })} />
+              <input
+                value={cfg.links[k]}
+                onChange={(e) => setCfg({ ...cfg, links: { ...cfg.links, [k]: e.target.value } })}
+              />
             </label>
           ))}
         </div>
-        <p className="faint small">Apple and Google require working privacy and terms links for apps that sell subscriptions.</p>
+        <p className="faint small">
+          Apple and Google require working privacy and terms links for apps that sell subscriptions.
+        </p>
       </div>
     </>
   );

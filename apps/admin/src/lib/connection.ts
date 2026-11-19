@@ -15,7 +15,11 @@ const STORAGE_KEY = 'polymath-admin-connection';
 
 export function getConnection(): Connection {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') as { url?: string; key?: string; demo?: boolean } | null;
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') as {
+      url?: string;
+      key?: string;
+      demo?: boolean;
+    } | null;
     if (saved?.demo) return { mode: 'demo', url: '', key: '', source: 'browser' };
     if (saved?.url && saved?.key) return { mode: 'supabase', url: saved.url, key: saved.key, source: 'browser' };
   } catch {

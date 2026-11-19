@@ -9,10 +9,11 @@ import { useAdmin, useLoad } from '../lib/admin';
 export function ContentList() {
   const { data, notify } = useAdmin();
   const navigate = useNavigate();
-  const { data: snapshot, error, reload } = useLoad(
-    async () => ({ contents: await data.listContents(), categories: await data.listCategories() }),
-    [data],
-  );
+  const {
+    data: snapshot,
+    error,
+    reload,
+  } = useLoad(async () => ({ contents: await data.listContents(), categories: await data.listCategories() }), [data]);
   const [q, setQ] = useState('');
   const [cat, setCat] = useState('');
   const [kind, setKind] = useState<ContentKind | ''>('');
@@ -101,7 +102,9 @@ export function ContentList() {
                       <div className="title-cell">
                         <Thumb content={c} category={category} />
                         <div>
-                          <Link to={`/content/${c.id}`} style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>
+                          <Link
+                            to={`/content/${c.id}`}
+                            style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>
                             {c.title}
                           </Link>
                           <div className="faint small">
@@ -118,7 +121,9 @@ export function ContentList() {
                       {c.access === 'free' ? (
                         <span className="badge free">Free · ad</span>
                       ) : (
-                        <span className="badge premium">Premium{c.price_credits ? ` · ${c.price_credits} cr` : ''}</span>
+                        <span className="badge premium">
+                          Premium{c.price_credits ? ` · ${c.price_credits} cr` : ''}
+                        </span>
                       )}
                     </td>
                     <td>

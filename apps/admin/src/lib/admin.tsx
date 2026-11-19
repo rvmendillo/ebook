@@ -117,7 +117,10 @@ export function useLoad<T>(load: () => Promise<T>, deps: unknown[]) {
     setState((s) => ({ ...s, loading: true }));
     load()
       .then((d) => alive && setState({ data: d, error: null, loading: false }))
-      .catch((e: unknown) => alive && setState({ data: null, error: e instanceof Error ? e : new Error(String(e)), loading: false }));
+      .catch(
+        (e: unknown) =>
+          alive && setState({ data: null, error: e instanceof Error ? e : new Error(String(e)), loading: false }),
+      );
     return () => {
       alive = false;
     };

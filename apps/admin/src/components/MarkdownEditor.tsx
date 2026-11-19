@@ -29,7 +29,11 @@ const SNIPPETS: (Snippet | 'sep')[] = [
     title: 'Sheet music (ABC notation)',
     block: '```abc\nX:1\nT:Melody\nM:4/4\nL:1/4\nK:C\nC D E F | G A B c |]\n```\n',
   },
-  { label: '▶ Video', title: 'YouTube embed', block: '<iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>\n' },
+  {
+    label: '▶ Video',
+    title: 'YouTube embed',
+    block: '<iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" allowfullscreen></iframe>\n',
+  },
   'sep',
   { label: '✂ Preview ends', title: 'Everything above this line is the free preview', block: '<!-- more -->\n' },
 ];

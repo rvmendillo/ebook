@@ -73,7 +73,12 @@ export default function ExploreScreen() {
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
         <Chip label="Everything" selected={kind === 'all'} onPress={() => setKind('all')} />
         {(Object.keys(KIND_LABELS) as ContentKind[]).map((k) => (
-          <Chip key={k} label={`${KIND_LABELS[k]}s`} selected={kind === k} onPress={() => setKind(kind === k ? 'all' : k)} />
+          <Chip
+            key={k}
+            label={`${KIND_LABELS[k]}s`}
+            selected={kind === k}
+            onPress={() => setKind(kind === k ? 'all' : k)}
+          />
         ))}
         <View style={[styles.sep, { backgroundColor: p.border }]} />
         <Chip label="Free" selected={access === 'free'} onPress={() => setAccess(access === 'free' ? 'all' : 'free')} />

@@ -41,10 +41,10 @@ export function BrandHeader() {
         accessibilityLabel={premium ? 'Premium membership' : `${credits} credits. Get Premium`}
         onPress={() => router.push(premium ? '/account' : '/paywall')}
         style={[styles.pill, { backgroundColor: p.surface, borderColor: p.border }]}>
-          <Icon name={premium ? 'crown' : 'credits'} size={14} color={premium ? brand.amber : p.primary} />
-          <T variant="caption" style={{ fontWeight: '800' }}>
-            {premium ? 'Premium' : `${credits}`}
-          </T>
+        <Icon name={premium ? 'crown' : 'credits'} size={14} color={premium ? brand.amber : p.primary} />
+        <T variant="caption" style={{ fontWeight: '800' }}>
+          {premium ? 'Premium' : `${credits}`}
+        </T>
       </Pressable>
     </View>
   );
@@ -55,36 +55,36 @@ export function PremiumBanner() {
   const { premium } = useApp();
   if (premium) return null;
   return (
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push('/paywall')}
-        style={({ pressed }) => [styles.bannerWrap, pressed && { opacity: 0.9 }]}>
-        <LinearGradient
-          colors={[brand.night, brand.indigoDeep, brand.violet]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.banner}>
-          <View style={{ flex: 1, gap: 4 }}>
-            <View style={styles.bannerTitleRow}>
-              <Icon name="sparkles" size={16} color={brand.amberSoft} />
-              <T variant="overline" color={brand.amberSoft}>
-                Polymath Premium
-              </T>
-            </View>
-            <T variant="heading" color="#FFFFFF">
-              Every ebook. No ads.
-            </T>
-            <T variant="small" color="rgba(255,255,255,0.8)">
-              Unlock the whole library and read offline.
+    <Pressable
+      accessibilityRole="button"
+      onPress={() => router.push('/paywall')}
+      style={({ pressed }) => [styles.bannerWrap, pressed && { opacity: 0.9 }]}>
+      <LinearGradient
+        colors={[brand.night, brand.indigoDeep, brand.violet]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.banner}>
+        <View style={{ flex: 1, gap: 4 }}>
+          <View style={styles.bannerTitleRow}>
+            <Icon name="sparkles" size={16} color={brand.amberSoft} />
+            <T variant="overline" color={brand.amberSoft}>
+              Polymath Premium
             </T>
           </View>
-          <View style={styles.bannerCta}>
-            <T variant="small" color={brand.night} style={{ fontWeight: '800' }}>
-              Try it
-            </T>
-          </View>
-        </LinearGradient>
-      </Pressable>
+          <T variant="heading" color="#FFFFFF">
+            Every ebook. No ads.
+          </T>
+          <T variant="small" color="rgba(255,255,255,0.8)">
+            Unlock the whole library and read offline.
+          </T>
+        </View>
+        <View style={styles.bannerCta}>
+          <T variant="small" color={brand.night} style={{ fontWeight: '800' }}>
+            Try it
+          </T>
+        </View>
+      </LinearGradient>
+    </Pressable>
   );
 }
 

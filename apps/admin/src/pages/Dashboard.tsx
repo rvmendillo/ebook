@@ -7,13 +7,10 @@ import { useAdmin, useLoad } from '../lib/admin';
 
 export function Dashboard() {
   const { data, connection } = useAdmin();
-  const { data: snapshot, error } = useLoad(
-    async () => {
-      const [stats, contents, categories] = await Promise.all([data.stats(), data.listContents(), data.listCategories()]);
-      return { stats, contents, categories };
-    },
-    [data],
-  );
+  const { data: snapshot, error } = useLoad(async () => {
+    const [stats, contents, categories] = await Promise.all([data.stats(), data.listContents(), data.listCategories()]);
+    return { stats, contents, categories };
+  }, [data]);
 
   if (error) return <div className="notice error">{error.message}</div>;
   if (!snapshot) return <p className="muted">Loading…</p>;
@@ -111,7 +108,10 @@ export function Dashboard() {
               {contents.slice(0, 6).map((c) => (
                 <tr key={c.id}>
                   <td>
-                    <Link to={`/content/${c.id}`} className="title-cell" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link
+                      to={`/content/${c.id}`}
+                      className="title-cell"
+                      style={{ textDecoration: 'none', color: 'inherit' }}>
                       <Thumb content={c} category={c.category_id ? catById.get(c.category_id) : undefined} />
                       <span>
                         <b>{c.title}</b>

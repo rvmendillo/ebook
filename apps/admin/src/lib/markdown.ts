@@ -41,8 +41,28 @@ import type { Heading } from '../../../../shared/types.ts';
 type MD = InstanceType<typeof MarkdownIt>;
 
 const LANGUAGES = {
-  bash, c, cpp, csharp, css, dart, go, java, javascript, json, kotlin,
-  markdown: markdownLang, php, plaintext, python, ruby, rust, sql, swift, typescript, xml, yaml,
+  bash,
+  c,
+  cpp,
+  csharp,
+  css,
+  dart,
+  go,
+  java,
+  javascript,
+  json,
+  kotlin,
+  markdown: markdownLang,
+  php,
+  plaintext,
+  python,
+  ruby,
+  rust,
+  sql,
+  swift,
+  typescript,
+  xml,
+  yaml,
 };
 for (const [name, lang] of Object.entries(LANGUAGES)) hljs.registerLanguage(name, lang);
 hljs.registerAliases(['js', 'jsx', 'mjs'], { languageName: 'javascript' });
@@ -343,7 +363,8 @@ export function renderMarkdown(source: string, options: RenderOptions = {}): Ren
 
   const sanitize = options.sanitize ?? ((h: string) => h);
   const html = sanitize(md.renderer.render(tokens, md.options, env));
-  const previewHtml = cut >= tokens.length && marker < 0 ? html : sanitize(md.renderer.render(tokens.slice(0, cut), md.options, env));
+  const previewHtml =
+    cut >= tokens.length && marker < 0 ? html : sanitize(md.renderer.render(tokens.slice(0, cut), md.options, env));
 
   return {
     html,

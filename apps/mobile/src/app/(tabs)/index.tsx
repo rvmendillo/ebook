@@ -74,25 +74,25 @@ export default function HomeScreen() {
         <Section title="Subjects">
           <View style={styles.grid}>
             {categories.map((cat) => (
-                <Pressable
-                  key={cat.id}
-                  onPress={() => router.push({ pathname: '/category/[slug]', params: { slug: cat.slug } })}
-                  accessibilityRole="button"
-                  accessibilityLabel={cat.name}
-                  style={({ pressed }) => [
-                    styles.tile,
-                    { width: tileWidth, backgroundColor: shade(cat.color, p.scheme === 'dark' ? -0.45 : 0.86) },
-                    pressed && { opacity: 0.8 },
-                  ]}>
-                  <View style={[styles.tileGlyph, { backgroundColor: cat.color }]}>
-                    <T variant="bodyStrong" color="#FFFFFF" numberOfLines={1} adjustsFontSizeToFit>
-                      {cat.icon}
-                    </T>
-                  </View>
-                  <T variant="small" style={{ fontWeight: '700' }} numberOfLines={1} adjustsFontSizeToFit>
-                    {cat.name}
+              <Pressable
+                key={cat.id}
+                onPress={() => router.push({ pathname: '/category/[slug]', params: { slug: cat.slug } })}
+                accessibilityRole="button"
+                accessibilityLabel={cat.name}
+                style={({ pressed }) => [
+                  styles.tile,
+                  { width: tileWidth, backgroundColor: shade(cat.color, p.scheme === 'dark' ? -0.45 : 0.86) },
+                  pressed && { opacity: 0.8 },
+                ]}>
+                <View style={[styles.tileGlyph, { backgroundColor: cat.color }]}>
+                  <T variant="bodyStrong" color="#FFFFFF" numberOfLines={1} adjustsFontSizeToFit>
+                    {cat.icon}
                   </T>
-                </Pressable>
+                </View>
+                <T variant="small" style={{ fontWeight: '700' }} numberOfLines={1} adjustsFontSizeToFit>
+                  {cat.name}
+                </T>
+              </Pressable>
             ))}
           </View>
         </Section>

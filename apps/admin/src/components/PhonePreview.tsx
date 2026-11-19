@@ -23,7 +23,10 @@ export function PhonePreview({
   const doc = useMemo(
     () =>
       buildReaderDocument({
-        html: view === 'full' ? html : `${previewHtml}<hr><p style="text-align:center;opacity:.7"><b>🔒 The rest is behind the ad / paywall gate</b></p>`,
+        html:
+          view === 'full'
+            ? html
+            : `${previewHtml}<hr><p style="text-align:center;opacity:.7"><b>🔒 The rest is behind the ad / paywall gate</b></p>`,
         theme,
         accent,
         header: { title: title || 'Untitled', kicker, meta },
@@ -39,7 +42,11 @@ export function PhonePreview({
         <button className={`btn small ${view === 'preview' ? 'primary' : ''}`} onClick={() => setView('preview')}>
           Free preview
         </button>
-        <select value={theme} onChange={(e) => setTheme(e.target.value as ReaderTheme)} style={{ width: 'auto' }} aria-label="Preview theme">
+        <select
+          value={theme}
+          onChange={(e) => setTheme(e.target.value as ReaderTheme)}
+          style={{ width: 'auto' }}
+          aria-label="Preview theme">
           <option value="light">Light</option>
           <option value="sepia">Sepia</option>
           <option value="dark">Dark</option>

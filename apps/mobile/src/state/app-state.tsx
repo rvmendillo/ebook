@@ -6,16 +6,7 @@
  * purchase is verified there. Demo mode: purchases are simulated and kept on the device.
  */
 import { useQuery } from '@tanstack/react-query';
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ReactNode,
-} from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 
 import { adPassValid } from '@shared/access';
 import type { Content } from '@shared/types';

@@ -57,7 +57,9 @@ export default function SignInScreen() {
   const input = [styles.input, { color: p.text, backgroundColor: p.surface, borderColor: p.border }];
 
   return (
-    <KeyboardAvoidingView style={{ flex: 1, backgroundColor: p.bg }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <KeyboardAvoidingView
+      style={{ flex: 1, backgroundColor: p.bg }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <ScrollView contentContainerStyle={styles.wrap} keyboardShouldPersistTaps="handled">
         <Logo size={56} />
         <T variant="title">{flow ? 'Check your inbox' : 'Keep your library everywhere'}</T>
@@ -98,7 +100,12 @@ export default function SignInScreen() {
           </T>
         ) : null}
         {!flow ? (
-          <Button title="Email me a code" loading={busy} disabled={!/^\S+@\S+\.\S+$/.test(email.trim())} onPress={send} />
+          <Button
+            title="Email me a code"
+            loading={busy}
+            disabled={!/^\S+@\S+\.\S+$/.test(email.trim())}
+            onPress={send}
+          />
         ) : (
           <>
             <Button title="Verify" loading={busy} disabled={code.length < 6} onPress={verify} />

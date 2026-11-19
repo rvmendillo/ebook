@@ -83,8 +83,8 @@ export function Settings() {
           </label>
         </div>
         <p className="faint small">
-          Supabase → Project Settings → API. The publishable key is safe in a browser; row-level security decides what each
-          user can change. Never paste the service-role / secret key here.
+          Supabase → Project Settings → API. The publishable key is safe in a browser; row-level security decides what
+          each user can change. Never paste the service-role / secret key here.
         </p>
         <div className="row">
           <button className="btn primary" disabled={!url || !key || testing} onClick={() => void connect()}>
@@ -173,22 +173,24 @@ export function Settings() {
           <li>
             <span className="dot">2</span>
             <div>
-              <b>Enable anonymous sign-ins</b> (Authentication → Sign In / Providers) so every app install gets an account
-              for its purchases.
+              <b>Enable anonymous sign-ins</b> (Authentication → Sign In / Providers) so every app install gets an
+              account for its purchases.
             </div>
           </li>
           <li>
             <span className="dot">3</span>
             <div>
               <b>Make yourself admin:</b> create a user (Authentication → Users → Add user) and run{' '}
-              <code>insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';</code>
+              <code>
+                insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';
+              </code>
             </div>
           </li>
           <li>
             <span className="dot">4</span>
             <div>
-              <b>Payments:</b> create the products in App Store Connect / Google Play, connect them in RevenueCat, deploy
-              the edge functions and add the webhook.
+              <b>Payments:</b> create the products in App Store Connect / Google Play, connect them in RevenueCat,
+              deploy the edge functions and add the webhook.
             </div>
           </li>
           <li>
