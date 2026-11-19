@@ -131,7 +131,7 @@ jobs:
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -archivePath "$RUNNER_TEMP/build/App.xcarchive" \
-            "${SIGNING[@]}" 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E --line-buffered '(error|warning: unable|BUILD|ARCHIVE|\*\*)' || true
+            "${SIGNING[@]}" 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E --line-buffered '(: error:|^error:|xcodebuild: error|\*\* (ARCHIVE|BUILD) (SUCCEEDED|FAILED))' || true
           test -d "$RUNNER_TEMP/build/App.xcarchive/Products/Applications" || (tail -n 200 "$RUNNER_TEMP/xcodebuild.log"; exit 1)
 
       - name: Package unsigned IPA

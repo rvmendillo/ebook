@@ -114,7 +114,7 @@ jobs:
             PRODUCT_BUNDLE_IDENTIFIER="$ADMIN_BUNDLE_ID" \
             MARKETING_VERSION="$APP_VERSION" \
             CURRENT_PROJECT_VERSION="$APP_BUILD_NUMBER" \
-            "${SIGNING[@]}" 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E --line-buffered '(error|BUILD|ARCHIVE|\*\*)' || true
+            "${SIGNING[@]}" 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E --line-buffered '(: error:|^error:|xcodebuild: error|\*\* (ARCHIVE|BUILD) (SUCCEEDED|FAILED))' || true
           test -d "$RUNNER_TEMP/build/Admin.xcarchive/Products/Applications" || (tail -n 200 "$RUNNER_TEMP/xcodebuild.log"; exit 1)
 
       - name: Package unsigned IPA
